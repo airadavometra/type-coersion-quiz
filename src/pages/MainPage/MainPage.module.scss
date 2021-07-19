@@ -1,3 +1,42 @@
 .main {
+  margin-left: 20vw;
+  margin-right: 20vw;
+  flex-grow: 1;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.title {
+  margin-bottom: clamp(24px, 3vw, 36px);
+  font-size: clamp(36px, 6vw, 96px);
+  letter-spacing: clamp(4px, 1vw, 8px);
+  text-align: center;
+  text-transform: uppercase;
+  animation: neon 1.5s infinite alternate;
+  &:selection {
+    color: var(--pink);
+  }
+  &:focus {
+    outline: none;
+  }
+}
+@keyframes neon {
+  0%,
+  19%,
+  21%,
+  23%,
+  25%,
+  54%,
+  56%,
+  100% {
+    text-shadow: -0.2rem -0.2rem 1rem #fff, 0.2rem 0.2rem 1rem #fff, 0 0 2rem var(--pink), 0 0 4rem var(--pink),
+      0 0 6rem var(--pink), 0 0 8rem var(--pink), 0 0 10rem var(--pink);
+  }
+
+  20%,
+  24%,
+  55% {
+    text-shadow: none;
+  }
 }

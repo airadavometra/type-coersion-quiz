@@ -1,5 +1,6 @@
 .main {
-  margin: 0 auto;
-  max-width: 900px;
-  width: fit-content;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }

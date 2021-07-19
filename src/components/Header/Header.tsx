@@ -7,15 +7,15 @@ export const Header: FunctionComponent = () => {
   return (
     <header className={classes.main}>
       <Logo className={classes.logo} />
-      <div className={classes.links}>
+      <div className={classes.menu}>
         <Link className={classes.link} to="/">
-          About app
+          <div>About app</div>
         </Link>
         <Link className={classes.link} to="/guessResult">
-          Guess expression result game
+          <div>First game</div>
         </Link>
         <Link className={classes.link} to="/guessExpression">
-          Guess expression by its result game
+          <div>Second game</div>
         </Link>
       </div>
     </header>

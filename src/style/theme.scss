@@ -1,7 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Tourney:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Exo+2:200');
 
 html {
-  --text-color: #333;
+  --black: #333;
+  --white: #e4e4e4;
+  --pink: #ff46a2;
+  --text-color: var(--white);
+  --background-color: var(--black);
   --simple-text-font: 'Cutive Mono', monospace;
-  --header-font: 'Tourney', cursive;
+  --header-font: 'Exo 2', sans-serif;
 }

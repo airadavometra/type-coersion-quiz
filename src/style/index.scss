@@ -1,5 +1,9 @@
 @import url('./theme.scss');
 
+:root {
+  font-size: 10px;
+}
+
 body,
 h1,
 h2,
@@ -24,18 +28,14 @@ html {
 body {
   width: 100vw;
   height: auto;
-  margin-top: 5vw;
-  margin-bottom: 5vw;
   font-family: var(--simple-text-font);
-  font-size: clamp(8px, 4vw, 16px);
+  font-size: clamp(14px, 2vw, 24px);
   color: var(--text-color);
+  background-color: var(--background-color);
 }
 h1 {
   font-family: var(--header-font);
-  font-size: clamp(24px, 10vw, 48px);
-}
-h2 {
-  font-size: clamp(12px, 5vw, 24px);
+  font-size: clamp(24px, 10vw, 72px);
 }
 
 input,
@@ -44,6 +44,11 @@ textarea,
 select {
   font: inherit;
   cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
 }
 
 .customCheckboxLabel {
