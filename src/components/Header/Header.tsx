@@ -15,7 +15,7 @@ export const Header: FunctionComponent = () => {
           Guess expression result game
         </Link>
         <Link className={classes.link} to="/guessExpression">
-          Guess expression by it&aposs result game
+          Guess expression by its result game
         </Link>
       </div>
     </header>
