@@ -1,9 +1,7 @@
-.light-theme {
-  --text-color: #333;
-  --back-color: #fcfcfc;
-}
+@import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Tourney:wght@300&display=swap');
 
-.dark-theme {
-  --text-color: #fcfcfc;
-  --back-color: #333;
+html {
+  --text-color: #333;
+  --simple-text-font: 'Cutive Mono', monospace;
+  --header-font: 'Tourney', cursive;
 }

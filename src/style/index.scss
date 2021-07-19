@@ -1,13 +1,94 @@
 @import url('./theme.scss');
 
-body {
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+li {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
-    'Droid Sans', 'Helvetica Neue', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+}
+ul {
+  list-style: none;
+}
+
+html {
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+body {
+  width: 100vw;
+  height: auto;
+  margin-top: 5vw;
+  margin-bottom: 5vw;
+  font-family: var(--simple-text-font);
+  font-size: clamp(8px, 4vw, 16px);
   color: var(--text-color);
-  background: var(--back-color);
+}
+h1 {
+  font-family: var(--header-font);
+  font-size: clamp(24px, 10vw, 48px);
+}
+h2 {
+  font-size: clamp(12px, 5vw, 24px);
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  cursor: pointer;
+}
+
+.customCheckboxLabel {
+  display: inline-flex;
+  align-items: center;
+  user-select: none;
+  cursor: pointer;
+  &::before {
+    margin-right: clamp(6px, 5vw, 12px);
+    width: clamp(12px, 10vw, 24px);
+    height: clamp(12px, 10vw, 24px);
+    content: '';
+    display: inline-block;
+    flex-shrink: 0;
+    flex-grow: 0;
+    border: 2px solid #ff46a2;
+    border-radius: 100%;
+    background-color: #e4e4e4;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 50% 50%;
+  }
+}
+input[type='checkbox'] {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+  &:checked + .customCheckboxLabel::before {
+    background-color: #ff46a2;
+    background-image: url('../icons/black-cat.svg');
+    background-size: contain;
+  }
+  &:disabled + span::before {
+    background-color: #e9ecef;
+  }
+}
+input[type='checkbox']:disabled + .customCheckboxLabel::before,
+input:disabled {
+  opacity: 0.7;
+}
+input[type='checkbox']:focus:enabled + .customCheckboxLabel::before,
+input[type='checkbox']:hover:enabled + .customCheckboxLabel::before,
+input:hover:enabled,
+input:focus:enabled {
+  box-shadow: 0 0 5px 0.2rem #ff46a244;
 }
 
 svg {

@@ -1,16 +1,23 @@
+import { Link } from '@reach/router';
 import React, { FunctionComponent } from 'react';
-import { Link } from 'react-router-dom';
 import classes from './Header.module.scss';
+import Logo from '@icons/black-cat.svg';
 
-export interface HeaderProps {
-  text: string;
-}
-
-export const Header: FunctionComponent<HeaderProps> = ({ text }) => {
+export const Header: FunctionComponent = () => {
   return (
-    <header>
-      <h1 className={classes.main}>{text}</h1>
-      <Link to="/">Home</Link>
+    <header className={classes.main}>
+      <Logo className={classes.logo} />
+      <div className={classes.links}>
+        <Link className={classes.link} to="/">
+          About app
+        </Link>
+        <Link className={classes.link} to="/guessResult">
+          Guess expression result game
+        </Link>
+        <Link className={classes.link} to="/guessExpression">
+          Guess expression by it&aposs result game
+        </Link>
+      </div>
     </header>
   );
 };
