@@ -4,9 +4,6 @@
   text-align: center;
   text-transform: uppercase;
   animation: neon 1.5s infinite alternate;
-  &:selection {
-    color: var(--pink);
-  }
   &:focus {
     outline: none;
   }

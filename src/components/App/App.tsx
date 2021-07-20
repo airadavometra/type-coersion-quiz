@@ -1,5 +1,6 @@
 import { Footer } from '@components/Footer/Footer';
 import { Header } from '@components/Header/Header';
+import { CatsQuizPage } from '@pages/CatsQuizPage/CatsQuizPage';
 import { MainPage } from '@pages/MainPage/MainPage';
 import { NotFoundPage } from '@pages/NotFoundPage/NotFoundPage';
 import { SimpleQuizPage } from '@pages/SimpleQuizPage/SimpleQuizPage';
@@ -16,6 +17,7 @@ export const App: FunctionComponent = () => {
       <Router>
         <RouterPage path="/" pageComponent={<MainPage />} />
         <RouterPage path="/guessResult" pageComponent={<SimpleQuizPage />} />
+        <RouterPage path="/guessExpression" pageComponent={<CatsQuizPage />} />
         <RouterPage default pageComponent={<NotFoundPage />} />
       </Router>
       <Footer />
