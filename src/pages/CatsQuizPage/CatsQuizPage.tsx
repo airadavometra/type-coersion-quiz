@@ -1,8 +1,6 @@
 import React, { FC } from 'react';
 import classes from './CatsQuizPage.module.scss';
 
-export interface CatsQuizPageProps {}
-
-export const CatsQuizPage: FC<CatsQuizProps> = ({}) => {
+export const CatsQuizPage: FC = ({}) => {
   return <div className={classes.main}></div>;
 };
