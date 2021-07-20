@@ -1,23 +1,26 @@
-import { ExpressionData } from '@app-types/expressionData';
+import { SimpleQuizData } from '@app-types/simpleQuizData';
 import { createSlice } from '@reduxjs/toolkit';
+import { generateSimpleQuiz } from 'util/generateSimpleQuiz';
 
 interface State {
-  expression: ExpressionData | undefined;
+  expression: SimpleQuizData | undefined;
   selectedAnswer: string | null;
   resolved: boolean;
 }
 
 const initialState: State = {
-  expression: undefined,
+  expression: generateSimpleQuiz(),
   selectedAnswer: null,
   resolved: false,
 };
 const slice = createSlice({
-  name: 'guessResultSlice',
+  name: 'simpleQuizSlice',
   initialState,
   reducers: {
     setExpression: (state, { payload: expression }) => {
       state.expression = expression;
+      state.selectedAnswer = null;
+      state.resolved = false;
     },
     setSelectedAnswer: (state, { payload: selectedAnswer }) => {
       state.selectedAnswer = selectedAnswer;
@@ -28,5 +31,5 @@ const slice = createSlice({
   },
 });
 
-export const exampleReducer = slice.reducer;
-export const exampleActions = slice.actions;
+export const simpleQuizReducer = slice.reducer;
+export const simpleQuizActions = slice.actions;

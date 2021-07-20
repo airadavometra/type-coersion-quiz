@@ -1,1 +1,1 @@
-export * from './guessResultSlice';
+export * from './simpleQuizSlice';

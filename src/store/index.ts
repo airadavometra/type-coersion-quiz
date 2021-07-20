@@ -1,8 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { exampleReducer } from '@store/slices/example';
+import { simpleQuizReducer } from '@store/slices/example';
 
 const reducer = {
-  example: exampleReducer,
+  simpleQuizStore: simpleQuizReducer,
 };
 
 export const store = configureStore({

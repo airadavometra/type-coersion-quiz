@@ -1,0 +1,53 @@
+.main {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: clamp(24px, 3vw, 36px);
+  @media (max-width: 400px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.customCheckboxLabel {
+  display: inline-flex;
+  align-items: center;
+  user-select: none;
+  cursor: pointer;
+  &::before {
+    margin-right: clamp(6px, 5vw, 12px);
+    width: clamp(12px, 10vw, 24px);
+    height: clamp(12px, 10vw, 24px);
+    content: '';
+    display: inline-block;
+    flex-shrink: 0;
+    flex-grow: 0;
+    border: 2px solid var(--white);
+    border-radius: 100%;
+    background-color: var(--black);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 50% 50%;
+  }
+}
+input[type='checkbox'] {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+  &:disabled + .customCheckboxLabel::before {
+    opacity: 0.3;
+  }
+  &.correct + .customCheckboxLabel::before {
+    box-shadow: 0 0 0.5rem var(--white), inset 0 0 0.5rem var(--white), 0 0 2rem var(--green),
+      inset 0 0 2rem var(--green), 0 0 4rem var(--green), inset 0 0 4rem var(--green);
+    opacity: 1;
+  }
+  &.wrong + .customCheckboxLabel::before {
+    box-shadow: 0 0 0.5rem var(--white), inset 0 0 0.5rem var(--white), 0 0 2rem var(--red), inset 0 0 2rem var(--red),
+      0 0 4rem var(--red), inset 0 0 4rem var(--red);
+    opacity: 1;
+  }
+  &:checked + .customCheckboxLabel::before,
+  &:focus:enabled + .customCheckboxLabel::before,
+  &:hover:enabled + .customCheckboxLabel::before {
+    box-shadow: 0 0 0.5rem var(--white), inset 0 0 0.5rem var(--white), 0 0 2rem var(--pink), inset 0 0 2rem var(--pink),
+      0 0 4rem var(--pink), inset 0 0 4rem var(--pink);
+  }
+}

@@ -1,10 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Tourney:wght@300&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Exo+2:200');
+@import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@200;400&display=swap');
 
 html {
   --black: #333;
   --white: #e4e4e4;
   --pink: #ff46a2;
+  --red: #f03;
+  --green: #4cbb17;
   --text-color: var(--white);
   --background-color: var(--black);
   --simple-text-font: 'Cutive Mono', monospace;

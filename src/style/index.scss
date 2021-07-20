@@ -47,51 +47,6 @@ a {
   text-decoration: inherit;
 }
 
-.customCheckboxLabel {
-  display: inline-flex;
-  align-items: center;
-  user-select: none;
-  cursor: pointer;
-  &::before {
-    margin-right: clamp(6px, 5vw, 12px);
-    width: clamp(12px, 10vw, 24px);
-    height: clamp(12px, 10vw, 24px);
-    content: '';
-    display: inline-block;
-    flex-shrink: 0;
-    flex-grow: 0;
-    border: 2px solid #ff46a2;
-    border-radius: 100%;
-    background-color: #e4e4e4;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: 50% 50%;
-  }
-}
-input[type='checkbox'] {
-  position: absolute;
-  z-index: -1;
-  opacity: 0;
-  &:checked + .customCheckboxLabel::before {
-    background-color: #ff46a2;
-    background-image: url('../icons/black-cat.svg');
-    background-size: contain;
-  }
-  &:disabled + span::before {
-    background-color: #e9ecef;
-  }
-}
-input[type='checkbox']:disabled + .customCheckboxLabel::before,
-input:disabled {
-  opacity: 0.7;
-}
-input[type='checkbox']:focus:enabled + .customCheckboxLabel::before,
-input[type='checkbox']:hover:enabled + .customCheckboxLabel::before,
-input:hover:enabled,
-input:focus:enabled {
-  box-shadow: 0 0 5px 0.2rem #ff46a244;
-}
-
 svg {
   width: 16px;
   height: 16px;
