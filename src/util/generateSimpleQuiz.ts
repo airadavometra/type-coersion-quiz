@@ -2,7 +2,6 @@ import { operands, possibleAnswers } from '@app-types/operands';
 import { binaryOperators, leftSideUnaryOperators, rightSideUnaryOperators } from '@app-types/operators';
 import { SimpleQuizData } from '@app-types/simpleQuizData';
 
-// случайное число от from до to включительно
 function randomInteger(from: number, to: number) {
   const randomNumber = from + Math.random() * (to - from);
   return Math.floor(randomNumber);
@@ -30,7 +29,7 @@ const generatePossibleAnswers = (correctAnswer: string) => {
 
 export const generateSimpleQuiz = (): SimpleQuizData => {
   let expression = '';
-  const operandsAmount = randomInteger(3, 6);
+  const operandsAmount = randomInteger(2, 6);
   const selectedOperands: string[] = [];
   const selectedOperators: string[] = [];
   for (let i = 0; i < operandsAmount; i++) {

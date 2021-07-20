@@ -1,5 +1,6 @@
 import { SimpleQuizData } from '@app-types/simpleQuizData';
 import { Button } from '@components/Button/Button';
+import { Code } from '@components/Code/Code';
 import { PossibleAnswers } from '@components/PossibleAnswers/PossibleAnswers';
 import React, { FC } from 'react';
 import classes from './SimpleQuiz.module.scss';
@@ -23,10 +24,8 @@ export const SimpleQuiz: FC<SimpleQuizProps> = ({
 }) => {
   return (
     <div className={classes.main}>
-      <div>
-        <div className={classes.expression}>
-          {expressionData?.expression} <span className={classes.questionMark}>{'= ?'}</span>
-        </div>
+      <div className={classes.expression}>
+        <Code code={expressionData?.expression as string} />
       </div>
       <PossibleAnswers
         possibleAnswers={expressionData?.possibleAnswers ?? []}

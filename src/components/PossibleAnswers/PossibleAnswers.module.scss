@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: clamp(24px, 3vw, 36px);
-  @media (max-width: 400px) {
+  @media (max-width: 500px) {
     grid-template-columns: repeat(2, 1fr);
   }
 }
@@ -13,8 +13,8 @@
   cursor: pointer;
   &::before {
     margin-right: clamp(6px, 5vw, 12px);
-    width: clamp(12px, 10vw, 24px);
-    height: clamp(12px, 10vw, 24px);
+    width: clamp(12px, 2vw, 24px);
+    height: clamp(12px, 2vw, 24px);
     content: '';
     display: inline-block;
     flex-shrink: 0;

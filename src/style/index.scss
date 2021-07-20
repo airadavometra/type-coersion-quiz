@@ -7,9 +7,16 @@ h3,
 h4,
 p,
 ul,
-li {
+li,
+pre {
   margin: 0;
   padding: 0;
+}
+pre {
+  display: inline;
+}
+code {
+  white-space: pre-wrap !important;
 }
 ul {
   list-style: none;

@@ -1,3 +1,4 @@
+import { Code } from '@components/Code/Code';
 import classNames from 'classnames';
 import React, { FC } from 'react';
 import classes from './PossibleAnswers.module.scss';
@@ -36,7 +37,9 @@ export const PossibleAnswers: FC<PossibleAnswersProps> = ({
                 }
               }}
             />
-            <span className={classNames(classes.customCheckboxLabel)}>{item}</span>
+            <span className={classNames(classes.customCheckboxLabel)}>
+              <Code code={item} />
+            </span>
           </label>
         </li>
       ))}
