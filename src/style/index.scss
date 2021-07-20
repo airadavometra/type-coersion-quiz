@@ -32,6 +32,7 @@ body {
 h1 {
   font-family: var(--header-font);
   font-size: clamp(24px, 10vw, 72px);
+  font-weight: 200;
 }
 
 input,
@@ -45,10 +46,4 @@ select {
 a {
   color: inherit;
   text-decoration: inherit;
-}
-
-svg {
-  width: 16px;
-  height: 16px;
-  fill: var(--text-color);
 }
