@@ -47,3 +47,8 @@ a {
   color: inherit;
   text-decoration: inherit;
 }
+
+*::selection {
+  color: var(--pink);
+  background: #e4e4e433;
+}

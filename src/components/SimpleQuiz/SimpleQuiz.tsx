@@ -23,7 +23,11 @@ export const SimpleQuiz: FC<SimpleQuizProps> = ({
 }) => {
   return (
     <div className={classes.main}>
-      <div className={classes.expression}>{`${expressionData?.expression} = ?`}</div>
+      <div>
+        <div className={classes.expression}>
+          {expressionData?.expression} <span className={classes.questionMark}>{'= ?'}</span>
+        </div>
+      </div>
       <PossibleAnswers
         possibleAnswers={expressionData?.possibleAnswers ?? []}
         correntAnswer={expressionData?.correctAnswer ?? ''}

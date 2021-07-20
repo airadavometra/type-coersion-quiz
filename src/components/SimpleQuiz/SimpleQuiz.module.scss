@@ -9,27 +9,7 @@
   width: fit-content;
   padding: clamp(14px, 2vw, 24px);
   font-size: clamp(18px, 3vw, 36px);
-  //   border: 3px solid var(--white);
-  //   border-radius: 2rem;
-  //   animation: neon 1.5s infinite alternate;
 }
-
-// @keyframes neon {
-//   0%,
-//   19%,
-//   21%,
-//   23%,
-//   25%,
-//   54%,
-//   56%,
-//   100% {
-//     box-shadow: 0 0 0.5rem var(--white), inset 0 0 0.5rem var(--white), 0 0 2rem var(--pink), inset 0 0 2rem var(--pink),
-//       0 0 4rem var(--pink), inset 0 0 4rem var(--pink);
-//   }
-
-//   20%,
-//   24%,
-//   55% {
-//     box-shadow: none;
-//   }
-// }
+.questionMark {
+  opacity: 0.5;
+}
