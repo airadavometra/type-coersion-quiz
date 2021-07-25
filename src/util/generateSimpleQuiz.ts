@@ -27,9 +27,9 @@ const generatePossibleAnswers = (correctAnswer: string) => {
   return shuffle([...answers]);
 };
 
-export const generateSimpleQuiz = (): SimpleQuizData => {
+const generateSimpleQuizInternal = (complexity: number): SimpleQuizData => {
   let expression = '';
-  const operandsAmount = randomInteger(2, 6);
+  const operandsAmount = complexity;
   const selectedOperands: string[] = [];
   const selectedOperators: string[] = [];
   for (let i = 0; i < operandsAmount; i++) {
@@ -66,4 +66,14 @@ export const generateSimpleQuiz = (): SimpleQuizData => {
     possibleAnswers: generatePossibleAnswers(correctAnswer),
     correctAnswer: correctAnswer,
   };
+};
+
+export const generateSimpleQuiz = (complexity: number): SimpleQuizData | undefined => {
+  while (true) {
+    try {
+      return generateSimpleQuizInternal(complexity);
+    } catch (ex) {
+      console.debug(ex);
+    }
+  }
 };

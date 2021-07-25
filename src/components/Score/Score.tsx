@@ -9,8 +9,8 @@ export interface ScoreProps {
 export const Score: FC<ScoreProps> = ({ currentScore, maxScore }) => {
   return (
     <div className={classes.main}>
-      <div>Score: {currentScore}</div>
-      <div>High score: {maxScore}</div>
+      <div className={classes.scoreItem}>🤘 Score: {currentScore}</div>
+      <div className={classes.scoreItem}>🔥 High score: {maxScore}</div>
     </div>
   );
 };

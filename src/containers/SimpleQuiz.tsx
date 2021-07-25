@@ -6,6 +6,7 @@ import { generateSimpleQuiz } from 'util/generateSimpleQuiz';
 
 export const SimpleQuiz: FC = () => {
   const {
+    evalGameStore: { currentScore },
     simpleQuizStore: { expression, selectedAnswer, resolved },
   } = useAppSelector((state) => state);
   const dispatch = useAppDispatch();
@@ -22,7 +23,7 @@ export const SimpleQuiz: FC = () => {
         }
       }}
       onSelectAnswer={(selectedAnswer: string) => dispatch(simpleQuizActions.setSelectedAnswer(selectedAnswer))}
-      onNext={() => dispatch(simpleQuizActions.setExpression(generateSimpleQuiz()))}
+      onNext={() => dispatch(simpleQuizActions.setExpression(generateSimpleQuiz(Math.floor(currentScore / 10) + 2)))}
     />
   );
 };

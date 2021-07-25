@@ -9,7 +9,7 @@ interface State {
 }
 
 const initialState: State = {
-  expression: generateSimpleQuiz(),
+  expression: generateSimpleQuiz(2),
   selectedAnswer: null,
   resolved: false,
 };

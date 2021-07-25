@@ -3,3 +3,9 @@
   top: 0;
   left: 0;
 }
+.scoreItem {
+  line-height: 1.4;
+}
+.scoreItem:not(:last-child) {
+  margin-bottom: clamp(18px, 2vw, 24px);
+}

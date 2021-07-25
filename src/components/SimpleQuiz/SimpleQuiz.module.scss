@@ -7,6 +7,7 @@
 .expression {
   width: fit-content;
   font-size: clamp(18px, 3vw, 36px);
+  user-select: none;
 }
 .quizItem {
   &:not(:last-child) {

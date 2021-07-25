@@ -24,7 +24,7 @@ export const operands = [
   '[24, 42]',
   '["twenty"]',
   '["lalala", "nanana"]',
-  'function(){}',
+  'function foo(){}',
   '{}',
   '{answer: "42"}',
 ];
@@ -40,5 +40,5 @@ export const possibleAnswers = [
   'Infinity',
   '-Infinity',
   '[object Object]',
-  'function(){}',
+  'function foo(){}',
 ];
