@@ -24,9 +24,7 @@ export const Header: FunctionComponent = () => {
           })}
           onClick={() => goToPage(PageRoot.Main)}
         >
-          <Link to={PageRoot.Main}>
-            <div>About app</div>
-          </Link>
+          <Link to={PageRoot.Main}>About</Link>
         </li>
         <li
           className={classNames(classes.link, {
@@ -34,9 +32,7 @@ export const Header: FunctionComponent = () => {
           })}
           onClick={() => goToPage(PageRoot.Eval)}
         >
-          <Link to={PageRoot.Eval}>
-            <div>eval()</div>
-          </Link>
+          <Link to={PageRoot.Eval}>eval()</Link>
         </li>
         <li
           className={classNames(classes.link, {
@@ -44,9 +40,7 @@ export const Header: FunctionComponent = () => {
           })}
           onClick={() => goToPage(PageRoot.CatQuiz)}
         >
-          <Link to={PageRoot.CatQuiz}>
-            <div>Cat Quiz</div>
-          </Link>
+          <Link to={PageRoot.CatQuiz}>Cat Quiz</Link>
         </li>
       </ul>
     </header>

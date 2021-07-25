@@ -60,7 +60,7 @@ export const generateSimpleQuiz = (): SimpleQuizData => {
       expression = `${expression} ${operator} ${selectedOperands.pop() as string}`;
     }
   }
-  const correctAnswer = eval(expression).toString();
+  const correctAnswer = String(eval(expression));
   return {
     expression: expression,
     possibleAnswers: generatePossibleAnswers(correctAnswer),
