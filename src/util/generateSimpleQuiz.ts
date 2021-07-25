@@ -7,24 +7,24 @@ function randomInteger(from: number, to: number) {
   return Math.floor(randomNumber);
 }
 
-Array.prototype.shuffle = function () {
-  for (let i = this.length - 1; i > 0; i--) {
+const shuffle = function (array: string[]) {
+  for (let i = array.length - 1; i > 0; i--) {
     const num = Math.floor(Math.random() * (i + 1));
-    const d = this[num];
-    this[num] = this[i];
-    this[i] = d;
+    const d = array[num];
+    array[num] = array[i];
+    array[i] = d;
   }
-  return this;
+  return array;
 };
 
 const generatePossibleAnswers = (correctAnswer: string) => {
-  const answers = new Set();
+  const answers = new Set<string>();
   answers.add(correctAnswer);
   while (answers.size != 6) {
     answers.add(possibleAnswers[randomInteger(0, possibleAnswers.length)]);
   }
 
-  return [...answers].shuffle();
+  return shuffle([...answers]);
 };
 
 export const generateSimpleQuiz = (): SimpleQuizData => {
