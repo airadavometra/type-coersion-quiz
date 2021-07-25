@@ -7,6 +7,10 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  @media (max-width: 500px) {
+    max-width: 100vw;
+    margin: clamp(24px, 3vw, 36px);
+  }
 }
 .title {
   margin-bottom: clamp(24px, 4vw, 56px);

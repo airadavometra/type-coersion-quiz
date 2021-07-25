@@ -18,7 +18,7 @@ export const MainPage: FunctionComponent = () => {
           <Link to={PageRoot.Eval} className={classes.gameLink}>
             <b>eval()</b>
           </Link>{' '}
-          game you get a JavaScript expression to answer what this expression returns. Simple, right?
+          game you get an absolutely random JavaScript expression to answer what this expression returns. Simple, right?
         </span>
         <span className={classes.descriptionArticle}>
           🙃{' '}
