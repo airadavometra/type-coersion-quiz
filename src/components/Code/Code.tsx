@@ -1,6 +1,9 @@
 import React, { FC } from 'react';
-import { Light as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { LightAsync as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { codeHighlightTheme } from '@style/codeHighlightTheme';
+import javascript from 'react-syntax-highlighter/dist/cjs/languages/hljs/javascript';
+
+SyntaxHighlighter.registerLanguage('javascript', javascript);
 
 export interface CodeProps {
   code: string;
