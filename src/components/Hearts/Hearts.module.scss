@@ -1,0 +1,16 @@
+.main {
+  display: flex;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.heart {
+  font-size: clamp(18px, 3vw, 36px);
+  &:not(:last-child) {
+    margin-right: 18px;
+  }
+}
+.spentHeart {
+  // filter: grayscale(1);
+  opacity: 50%;
+}

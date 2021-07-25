@@ -10,18 +10,22 @@ export interface SimpleQuizProps {
   expressionData: SimpleQuizData | undefined;
   selectedAnswer: string | null;
   resolved: boolean;
+  isGameOver: boolean;
   onSelectAnswer(selectedAnswer: string): void;
   onResolve(): void;
   onNext(): void;
+  onStartOver(): void;
 }
 
 export const SimpleQuiz: FC<SimpleQuizProps> = ({
   expressionData,
   selectedAnswer,
   resolved,
+  isGameOver,
   onSelectAnswer,
   onResolve,
   onNext,
+  onStartOver,
 }) => {
   return (
     <div className={classes.main}>
@@ -38,8 +42,16 @@ export const SimpleQuiz: FC<SimpleQuizProps> = ({
       />
       <Button
         className={classes.quizItem}
-        onClick={resolved ? onNext : onResolve}
-        text={resolved ? 'Next question' : selectedAnswer == null ? 'I give up' : 'Check my answer'}
+        onClick={resolved ? (isGameOver ? onStartOver : onNext) : onResolve}
+        text={
+          resolved
+            ? isGameOver
+              ? 'Start over'
+              : 'Next question'
+            : selectedAnswer == null
+            ? 'I give up'
+            : 'Check my answer'
+        }
       />
     </div>
   );
