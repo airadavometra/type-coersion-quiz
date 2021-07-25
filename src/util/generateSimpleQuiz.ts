@@ -60,7 +60,13 @@ const generateSimpleQuizInternal = (complexity: number): SimpleQuizData => {
       expression = `${expression} ${operator} ${selectedOperands.pop() as string}`;
     }
   }
-  const correctAnswer = String(eval(expression));
+  const correctAnswerRaw = eval(expression);
+  let correctAnswer = '';
+  if (typeof correctAnswerRaw === 'string') {
+    correctAnswer = `"${String(eval(expression))}"`;
+  } else {
+    correctAnswer = String(eval(expression));
+  }
   return {
     expression: expression,
     possibleAnswers: generatePossibleAnswers(correctAnswer),

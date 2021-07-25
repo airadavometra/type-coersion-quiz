@@ -2,10 +2,14 @@
   padding: clamp(24px, 3vw, 36px);
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
-  align-items: center;
+  justify-content: space-between;
   font-size: clamp(8px, 2vw, 16px);
   line-height: 1.4;
+}
+.linksContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 .link {
   color: inherit;
@@ -19,4 +23,9 @@
         0 0 2rem var(--pink), 0 0 3rem var(--pink), 0 0 4rem var(--pink), 0 0 5rem var(--pink);
     }
   }
+}
+.githubLogo {
+  width: clamp(8px, 2vw, 16px);
+  height: clamp(8px, 2vw, 16px);
+  fill: var(--pinkFaded);
 }
