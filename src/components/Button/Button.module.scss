@@ -6,8 +6,17 @@
   background-color: var(--black);
   border: clamp(1px, 1vw, 3px) solid var(--white);
   border-radius: 2rem;
-  &:hover {
-    box-shadow: 0 0 0.5rem var(--white), inset 0 0 0.5rem var(--white), 0 0 2rem var(--pink), inset 0 0 2rem var(--pink),
-      0 0 4rem var(--pink), inset 0 0 4rem var(--pink);
+  @media (hover: hover) {
+    &:hover {
+      box-shadow: 0 0 0.5rem var(--white), inset 0 0 0.5rem var(--white), 0 0 2rem var(--pink),
+        inset 0 0 2rem var(--pink), 0 0 4rem var(--pink), inset 0 0 4rem var(--pink);
+    }
+  }
+  @media (hover: none) {
+    box-shadow: 0 0 0.5rem var(--whiteFaded), inset 0 0 0.5rem var(--whiteFaded), 0 0 1rem var(--pinkFaded),
+      inset 0 0 1rem var(--pinkFaded), 0 0 2rem var(--pinkFaded), inset 0 0 2rem var(--pinkFaded);
+  }
+  @media (max-width: 500px) {
+    margin-top: 10vh;
   }
 }
