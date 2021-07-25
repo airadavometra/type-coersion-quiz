@@ -1,0 +1,22 @@
+.linkContainer {
+  &:not(:last-child) {
+    margin-right: clamp(36px, 5vw, 76px);
+  }
+}
+.link {
+  color: inherit;
+  text-decoration: inherit;
+  opacity: 50%;
+  &:hover,
+  &:focus {
+    opacity: 100%;
+    text-shadow: -0.1rem -0.1rem 0.5rem var(--white), 0.1rem 0.1rem 0.5rem var(--white), 0 0 1rem var(--pink),
+      0 0 2rem var(--pink), 0 0 3rem var(--pink), 0 0 4rem var(--pink), 0 0 5rem var(--pink);
+  }
+}
+
+.selectedLink {
+  opacity: 100%;
+  text-shadow: -0.1rem -0.1rem 0.5rem var(--white), 0.1rem 0.1rem 0.5rem var(--white), 0 0 1rem var(--pink),
+    0 0 2rem var(--pink), 0 0 3rem var(--pink), 0 0 4rem var(--pink), 0 0 5rem var(--pink);
+}
