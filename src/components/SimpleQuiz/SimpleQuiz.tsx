@@ -2,6 +2,7 @@ import { SimpleQuizData } from '@app-types/simpleQuizData';
 import { Button } from '@components/Button/Button';
 import { Code } from '@components/Code/Code';
 import { PossibleAnswers } from '@components/PossibleAnswers/PossibleAnswers';
+import classNames from 'classnames';
 import React, { FC } from 'react';
 import classes from './SimpleQuiz.module.scss';
 
@@ -24,10 +25,11 @@ export const SimpleQuiz: FC<SimpleQuizProps> = ({
 }) => {
   return (
     <div className={classes.main}>
-      <div className={classes.expression}>
+      <div className={classNames(classes.expression, classes.quizItem)}>
         <Code code={expressionData?.expression as string} />
       </div>
       <PossibleAnswers
+        className={classes.quizItem}
         possibleAnswers={expressionData?.possibleAnswers ?? []}
         correntAnswer={expressionData?.correctAnswer ?? ''}
         selectedAnswer={selectedAnswer}
@@ -35,6 +37,7 @@ export const SimpleQuiz: FC<SimpleQuizProps> = ({
         onSelectAnswer={onSelectAnswer}
       />
       <Button
+        className={classes.quizItem}
         onClick={resolved ? onNext : onResolve}
         text={resolved ? 'Next question' : selectedAnswer == null ? 'I give up' : 'Check my answer'}
       />

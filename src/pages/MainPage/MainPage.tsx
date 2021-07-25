@@ -1,4 +1,6 @@
 import { Neon } from '@components/Neon/Neon';
+import { PageRoot } from '@constants';
+import { Link } from '@reach/router';
 import React, { FunctionComponent } from 'react';
 import classes from './MainPage.module.scss';
 
@@ -12,12 +14,18 @@ export const MainPage: FunctionComponent = () => {
           type coersion knowledge 💪 We have two games for that:
         </span>
         <span className={classes.descriptionArticle}>
-          🙃 In <b>eval()</b> game you get a JavaScript expression to answer what this expression returns. Simple,
-          right?
+          🙃 In{' '}
+          <Link to={PageRoot.Eval} className={classes.gameLink}>
+            <b>eval()</b>
+          </Link>{' '}
+          game you get a JavaScript expression to answer what this expression returns. Simple, right?
         </span>
         <span className={classes.descriptionArticle}>
-          🙃 <b>Cat Quiz</b> is more tricky. It&apos;s not ready yet, but it&apos;s going to be mindblowing! Just wait
-          for it...
+          🙃{' '}
+          <Link to={PageRoot.CatQuiz} className={classes.gameLink}>
+            <b>Cat Quiz</b>
+          </Link>{' '}
+          is more tricky. It&apos;s not ready yet, but it&apos;s going to be mindblowing! Just wait for it...
         </span>
       </div>
     </div>

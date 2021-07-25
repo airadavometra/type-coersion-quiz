@@ -4,6 +4,7 @@ import React, { FC } from 'react';
 import classes from './PossibleAnswers.module.scss';
 
 export interface PossibleAnswersProps {
+  className: string;
   possibleAnswers: string[];
   correntAnswer: string;
   selectedAnswer: string | null;
@@ -12,6 +13,7 @@ export interface PossibleAnswersProps {
 }
 
 export const PossibleAnswers: FC<PossibleAnswersProps> = ({
+  className,
   possibleAnswers,
   correntAnswer,
   selectedAnswer,
@@ -19,7 +21,7 @@ export const PossibleAnswers: FC<PossibleAnswersProps> = ({
   onSelectAnswer,
 }) => {
   return (
-    <ul className={classes.main}>
+    <ul className={classNames(classes.main, className)}>
       {possibleAnswers.map((item, index) => (
         <li key={index}>
           <label className={classNames(classes.customCheckbox)}>

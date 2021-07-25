@@ -1,8 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { simpleQuizReducer } from '@store/slices/example';
+import { evalGameReducer, simpleQuizReducer } from '@store/slices/example';
 
 const reducer = {
   simpleQuizStore: simpleQuizReducer,
+  evalGameStore: evalGameReducer,
 };
 
 export const store = configureStore({

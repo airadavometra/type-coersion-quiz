@@ -15,7 +15,7 @@ export const App: FunctionComponent = () => {
   return (
     <div className={classes.main}>
       <Header />
-      <Router>
+      <Router className={classes.router}>
         <RouterPage path={PageRoot.Main} pageComponent={<MainPage />} />
         <RouterPage path={PageRoot.Eval} pageComponent={<SimpleQuizPage />} />
         <RouterPage path={PageRoot.CatQuiz} pageComponent={<CatsQuizPage />} />

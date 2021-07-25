@@ -1,5 +1,6 @@
 .main {
   max-width: 50vw;
+  height: 100%;
   margin: auto;
   flex-grow: 1;
   display: flex;
@@ -17,4 +18,13 @@
 }
 .descriptionArticle:not(:last-child) {
   margin-bottom: clamp(18px, 2vw, 24px);
+}
+.gameLink {
+  &:hover,
+  &:focus {
+    & > * {
+      text-shadow: -0.1rem -0.1rem 0.5rem var(--white), 0.1rem 0.1rem 0.5rem var(--white), 0 0 1rem var(--pink),
+        0 0 2rem var(--pink), 0 0 3rem var(--pink), 0 0 4rem var(--pink), 0 0 5rem var(--pink);
+    }
+  }
 }
