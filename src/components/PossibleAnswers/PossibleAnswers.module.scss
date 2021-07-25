@@ -34,6 +34,7 @@ input[type='checkbox'] {
   &:disabled + .customCheckboxLabel::before {
     opacity: 0.3;
   }
+  /* stylelint-disable */
   &:checked + .customCheckboxLabel::before,
   &:focus:enabled + .customCheckboxLabel::before,
   &:hover:enabled + .customCheckboxLabel::before {
@@ -50,4 +51,5 @@ input[type='checkbox'] {
       0 0 4rem var(--red), inset 0 0 4rem var(--red);
     opacity: 1;
   }
+  /* stylelint-enable */
 }

@@ -26,7 +26,8 @@
       "@api/*": ["api/*"],
       "@mocks/*": ["mocks/*"],
       "@app-types/*": ["types/*"],
-      "@config": ["config.ts"]
+      "@config": ["config.ts"],
+      "@constants": ["constants.ts"]
     }
   },
   "include": ["./src/**/*"],

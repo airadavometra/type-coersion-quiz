@@ -3,6 +3,7 @@ import React, { FunctionComponent, useState } from 'react';
 import classes from './Header.module.scss';
 import Logo from '@icons/black-cat.svg';
 import classNames from 'classnames';
+import { PageRoot } from '@constants';
 
 export const Header: FunctionComponent = () => {
   const [selectedItem, setSelectedItem] = useState(window.location.pathname);
@@ -19,32 +20,32 @@ export const Header: FunctionComponent = () => {
       <ul className={classes.menu}>
         <li
           className={classNames(classes.link, {
-            [classes.selectedLink]: isSelected('/'),
+            [classes.selectedLink]: isSelected(PageRoot.Main),
           })}
-          onClick={() => goToPage('/')}
+          onClick={() => goToPage(PageRoot.Main)}
         >
-          <Link to="/">
+          <Link to={PageRoot.Main}>
             <div>About app</div>
           </Link>
         </li>
         <li
           className={classNames(classes.link, {
-            [classes.selectedLink]: isSelected('/guessResult'),
+            [classes.selectedLink]: isSelected(PageRoot.Eval),
           })}
-          onClick={() => goToPage('/guessResult')}
+          onClick={() => goToPage(PageRoot.Eval)}
         >
-          <Link to="/guessResult">
-            <div>First game</div>
+          <Link to={PageRoot.Eval}>
+            <div>eval()</div>
           </Link>
         </li>
         <li
           className={classNames(classes.link, {
-            [classes.selectedLink]: isSelected('/guessExpression'),
+            [classes.selectedLink]: isSelected(PageRoot.CatQuiz),
           })}
-          onClick={() => goToPage('/guessExpression')}
+          onClick={() => goToPage(PageRoot.CatQuiz)}
         >
-          <Link to="/guessExpression">
-            <div>Second game</div>
+          <Link to={PageRoot.CatQuiz}>
+            <div>Cat Quiz</div>
           </Link>
         </li>
       </ul>
