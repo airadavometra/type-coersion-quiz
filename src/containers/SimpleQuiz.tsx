@@ -29,8 +29,6 @@ export const SimpleQuiz: FC = () => {
       onNext={() => dispatch(simpleQuizActions.setExpression(generateSimpleQuiz(Math.floor(currentScore / 10) + 2)))}
       isGameOver={isGameOver}
       onStartOver={() => {
-        //TODO: this is hack! fix it later
-        window.location.reload();
         dispatch(evalGameActions.resetGame());
         dispatch(simpleQuizActions.setExpression(generateSimpleQuiz(Math.floor(currentScore / 10) + 2)));
       }}

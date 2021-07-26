@@ -23,7 +23,7 @@ export const Score: FC<ScoreComponentProps> = ({ gameKey }) => {
 
   useEffect(() => {
     if (currentScore > maxScore) {
-      dispatch(evalGameActions.setMaxScore(maxScore));
+      dispatch(evalGameActions.setMaxScore(currentScore));
       saveScore(currentScore, gameKey);
     }
   }, [currentScore]);
