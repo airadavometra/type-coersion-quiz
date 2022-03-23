@@ -2,7 +2,7 @@ import React, { FC, useEffect } from 'react';
 import { useAppSelector, useAppDispatch } from '@store/hooks';
 import { Score as ScoreComponent } from '@components/Score/Score';
 import { loadScore, saveScore } from 'util/localStorage';
-import { evalGameActions } from '@store/slices/example';
+import { evalGameActions } from '@store/slices';
 
 export interface ScoreComponentProps {
   gameKey: string;

@@ -1,6 +1,6 @@
+import { CatQuizData } from '@app-types/catQuizData';
 import { operands, possibleAnswers } from '@app-types/operands';
 import { binaryOperators, leftSideUnaryOperators, rightSideUnaryOperators } from '@app-types/operators';
-import { SimpleQuizData } from '@app-types/simpleQuizData';
 
 function randomInteger(from: number, to: number) {
   const randomNumber = from + Math.random() * (to - from);
@@ -17,20 +17,11 @@ const shuffle = function (array: string[]) {
   return array;
 };
 
-const generatePossibleAnswers = (correctAnswer: string) => {
-  const answers = new Set<string>();
-  answers.add(correctAnswer);
-  while (answers.size != 6) {
-    answers.add(possibleAnswers[randomInteger(0, possibleAnswers.length)]);
-  }
-
-  return shuffle([...answers]);
-};
-
-const generateSimpleQuizInternal = (complexity: number): SimpleQuizData => {
+const generateCatQuizInternal = (complexity: number): CatQuizData => {
   let expression = '';
   const operandsAmount = complexity;
   const selectedOperands: string[] = [];
+  const selectedOperators: string[] = [];
   for (let i = 0; i < operandsAmount; i++) {
     const operandIndex = randomInteger(0, operands.length);
     let operand = operands[operandIndex];
@@ -47,13 +38,17 @@ const generateSimpleQuizInternal = (complexity: number): SimpleQuizData => {
     }
     selectedOperands.push(operand);
   }
+  const selectedOperandsCopy = selectedOperands.slice();
   expression = selectedOperands.pop() as string;
   for (let i = 0; i < operandsAmount - 1; i++) {
     const operatorIndex = randomInteger(0, binaryOperators.length);
     const operator = binaryOperators[operatorIndex];
+    selectedOperators.push(operator);
     const needParentheses = i === operandsAmount - 2 ? 0 : randomInteger(0, 2);
     if (needParentheses) {
       expression = `(${expression} ${operator} ${selectedOperands.pop() as string})`;
+      selectedOperators.push('(');
+      selectedOperators.push(')');
     } else {
       expression = `${expression} ${operator} ${selectedOperands.pop() as string}`;
     }
@@ -66,16 +61,16 @@ const generateSimpleQuizInternal = (complexity: number): SimpleQuizData => {
     correctAnswer = String(eval(expression));
   }
   return {
-    expression: expression,
-    possibleAnswers: generatePossibleAnswers(correctAnswer),
+    operands: shuffle([...selectedOperandsCopy]),
+    operators: shuffle([...selectedOperators]),
     correctAnswer: correctAnswer,
   };
 };
 
-export const generateSimpleQuiz = (complexity: number): SimpleQuizData | undefined => {
+export const generateCatQuiz = (complexity: number): CatQuizData | undefined => {
   while (true) {
     try {
-      return generateSimpleQuizInternal(complexity);
+      return generateCatQuizInternal(complexity);
     } catch (ex) {
       console.debug(ex);
     }

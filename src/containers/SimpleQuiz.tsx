@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { useAppSelector, useAppDispatch } from '@store/hooks';
 import { SimpleQuiz as SimpleQuizComponent } from '@components/SimpleQuiz/SimpleQuiz';
-import { evalGameActions, simpleQuizActions } from '@store/slices/example';
+import { evalGameActions, simpleQuizActions } from '@store/slices';
 import { generateSimpleQuiz } from 'util/generateSimpleQuiz';
 
 export const SimpleQuiz: FC = () => {
