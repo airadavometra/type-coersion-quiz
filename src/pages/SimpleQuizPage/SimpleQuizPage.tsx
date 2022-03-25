@@ -8,7 +8,7 @@ export const SimpleQuizPage: FunctionComponent = ({}) => {
   return (
     <div className={classes.main}>
       <Score gameKey="evalGame" />
-      <Hearts />
+      <Hearts gameKey="evalGame" />
       <SimpleQuiz />
     </div>
   );
