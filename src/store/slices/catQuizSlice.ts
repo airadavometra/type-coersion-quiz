@@ -3,12 +3,14 @@ import { createSlice } from '@reduxjs/toolkit';
 import { generateCatQuiz } from 'util/generateCatQuiz';
 
 interface State {
+  complexity: number;
   expression: CatQuizData | undefined;
   selectedAnswer: string | null;
   resolved: boolean;
 }
 
 const initialState: State = {
+  complexity: 2,
   expression: generateCatQuiz(2),
   selectedAnswer: null,
   resolved: false,
@@ -17,6 +19,9 @@ const slice = createSlice({
   name: 'catQuizSlice',
   initialState,
   reducers: {
+    setComplexity: (state, { payload: complexity }) => {
+      state.complexity = complexity;
+    },
     setExpression: (state, { payload: expression }) => {
       state.expression = expression;
       state.selectedAnswer = null;
