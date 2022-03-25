@@ -10,9 +10,13 @@ export interface ScoreComponentProps {
 
 export const Score: FC<ScoreComponentProps> = ({ gameKey }) => {
   const {
-    evalGameStore: { currentScore, maxScore },
+    evalGameStore: { currentScore: evalCurrentScore, maxScore: evalMaxScore },
+    catGameStore: { currentScore: catCurrentScore, maxScore: catMaxScore },
   } = useAppSelector((state) => state);
   const dispatch = useAppDispatch();
+
+  const maxScore = gameKey === 'catGame' ? catMaxScore : evalMaxScore;
+  const currentScore = gameKey === 'catGame' ? catCurrentScore : evalCurrentScore;
 
   useEffect(() => {
     const maxScore = loadScore(gameKey);

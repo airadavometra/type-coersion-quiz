@@ -8,7 +8,7 @@ export const CatsQuizPage: FC = ({}) => {
   return (
     <div className={classes.main}>
       <Score gameKey="catGame" />
-      <Hearts />
+      <Hearts gameKey="catGame" />
       <CatQuiz />
     </div>
   );
