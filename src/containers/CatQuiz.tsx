@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { useAppSelector, useAppDispatch } from '@store/hooks';
 import { CatQuiz as CatQuizComponent } from '@components/CatQuiz/CatQuiz';
-import { evalGameActions, catQuizActions } from '@store/slices';
+import { catQuizActions, catGameActions } from '@store/slices';
 import { generateCatQuiz } from 'util/generateCatQuiz';
 
 export const CatQuiz: FC = () => {
@@ -19,18 +19,24 @@ export const CatQuiz: FC = () => {
       onResolve={() => {
         dispatch(catQuizActions.resolveExpression());
         if (selectedAnswer === expression?.correctAnswer) {
-          dispatch(evalGameActions.addPoints(1));
+          dispatch(catGameActions.addPoints(1));
         }
         if (selectedAnswer !== expression?.correctAnswer) {
-          dispatch(evalGameActions.removeHeart());
+          dispatch(catGameActions.removeHeart());
         }
       }}
       onSelectAnswer={(selectedAnswer: string) => dispatch(catQuizActions.setSelectedAnswer(selectedAnswer))}
-      onNext={() => dispatch(catQuizActions.setExpression(generateCatQuiz(Math.floor(currentScore / 10) + 2)))}
+      onNext={() => {
+        const complexity = Math.floor(currentScore / 10) + 2;
+        dispatch(catQuizActions.setExpression(generateCatQuiz(complexity)));
+        dispatch(catQuizActions.setComplexity(complexity));
+      }}
       isGameOver={isGameOver}
       onStartOver={() => {
-        dispatch(evalGameActions.resetGame());
-        dispatch(catQuizActions.setExpression(generateCatQuiz(Math.floor(currentScore / 10) + 2)));
+        const complexity = Math.floor(currentScore / 10) + 2;
+        dispatch(catGameActions.resetGame());
+        dispatch(catQuizActions.setExpression(generateCatQuiz(complexity)));
+        dispatch(catQuizActions.setComplexity(complexity));
       }}
     />
   );
