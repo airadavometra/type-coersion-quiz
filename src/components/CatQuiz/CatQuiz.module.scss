@@ -9,7 +9,7 @@
 }
 .quizItem {
   &:not(:last-child) {
-    margin-bottom: clamp(36px, 6vw, 96px);
+    margin-bottom: clamp(36px, 4vw, 96px);
   }
   @media (max-width: 500px) {
     &:last-child {
@@ -25,6 +25,9 @@
   &:hover {
     box-shadow: none;
   }
+}
+.expectedResultContainer {
+  font-size: 2.4rem;
 }
 .expectedResult {
   font-family: var(--header-font);

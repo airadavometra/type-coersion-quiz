@@ -29,7 +29,7 @@ export const CatQuiz: FC<CatQuizProps> = ({
 }) => {
   return (
     <div className={classes.main}>
-      <div className={classNames(classes.quizItem)}>
+      <div className={classNames(classes.quizItem, classes.expectedResultContainer)}>
         <span className={classNames(classes.expectedResult)}>Expected result:</span>
         <Code code={expressionData?.correctAnswer || ''} />
       </div>
