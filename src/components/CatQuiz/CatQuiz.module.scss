@@ -17,6 +17,17 @@
     }
   }
 }
-.operandContainer {
+.operandContainer,
+.emptyCellsContainer {
   display: flex;
+}
+.nonClickableCell {
+  &:hover {
+    box-shadow: none;
+  }
+}
+.expectedResult {
+  font-family: var(--header-font);
+  color: var(--white);
+  text-transform: uppercase;
 }
