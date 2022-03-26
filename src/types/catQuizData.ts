@@ -1,5 +1,4 @@
 export type CatQuizData = {
-  operands: string[];
-  operators: string[];
+  expressionItems: string[];
   correctAnswer: string;
 };

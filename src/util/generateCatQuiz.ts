@@ -61,8 +61,7 @@ const generateCatQuizInternal = (complexity: number): CatQuizData => {
     correctAnswer = String(eval(expression));
   }
   return {
-    operands: shuffle([...selectedOperandsCopy]),
-    operators: shuffle([...selectedOperators]),
+    expressionItems: shuffle([...selectedOperandsCopy, ...selectedOperators]),
     correctAnswer: correctAnswer,
   };
 };

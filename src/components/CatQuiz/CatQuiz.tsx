@@ -1,7 +1,6 @@
 import { CatQuizData } from '@app-types/catQuizData';
 import { Button } from '@components/Button/Button';
-import { Code } from '@components/Code/Code';
-import { PossibleAnswers } from '@components/PossibleAnswers/PossibleAnswers';
+import { CatGameCard } from '@components/CatGameCard/CatGameCard';
 import classNames from 'classnames';
 import React, { FC } from 'react';
 import classes from './CatQuiz.module.scss';
@@ -29,18 +28,17 @@ export const CatQuiz: FC<CatQuizProps> = ({
 }) => {
   return (
     <div className={classes.main}>
-      <div className={classNames(classes.expression, classes.quizItem)}>
-        {/* <Code code={expressionData?.expression as string} /> */}
+      <div className={classNames(classes.quizItem, classes.operandContainer)}>
+        {expressionData?.expressionItems.map((item) => (
+          <CatGameCard
+            key={item}
+            text={item}
+            onClick={() => {
+              alert('click!');
+            }}
+          />
+        ))}
       </div>
-      <PossibleAnswers
-        className={classes.quizItem}
-        possibleAnswers={[]}
-        // possibleAnswers={expressionData?.possibleAnswers ?? []}
-        correntAnswer={expressionData?.correctAnswer ?? ''}
-        selectedAnswer={selectedAnswer}
-        resolved={resolved}
-        onSelectAnswer={onSelectAnswer}
-      />
       <Button
         className={classes.quizItem}
         onClick={resolved ? (isGameOver ? onStartOver : onNext) : onResolve}
