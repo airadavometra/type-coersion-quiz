@@ -6,12 +6,12 @@ import classes from './CatGameCard.module.scss';
 export interface CatGameCardProps {
   className?: string;
   text: string;
-  onClick(): void;
+  onClick?(): void;
 }
 
 export const CatGameCard: FC<CatGameCardProps> = ({ text, onClick, className }) => {
   return (
-    <div className={classNames(className, classes.card)} onClick={() => onClick()}>
+    <div className={classNames(className, classes.card)} onClick={() => onClick && onClick()}>
       <Code code={text} />
     </div>
   );
