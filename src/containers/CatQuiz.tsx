@@ -3,6 +3,7 @@ import { useAppSelector, useAppDispatch } from '@store/hooks';
 import { CatQuiz as CatQuizComponent } from '@components/CatQuiz/CatQuiz';
 import { catQuizActions, catGameActions } from '@store/slices';
 import { generateCatQuiz } from 'util/generateCatQuiz';
+import { DropResult } from 'react-beautiful-dnd';
 
 export const CatQuiz: FC = () => {
   const {
@@ -10,6 +11,16 @@ export const CatQuiz: FC = () => {
     catQuizStore: { expression, selectedAnswer, resolved },
   } = useAppSelector((state) => state);
   const dispatch = useAppDispatch();
+
+  const handleChangeOrder = (result: DropResult) => {
+    if (expression && result.destination) {
+      const items = Array.from(expression?.expressionItems);
+      const [reorderedItem] = items.splice(result.source.index, 1);
+      items.splice(result.destination.index, 0, reorderedItem);
+
+      dispatch(catQuizActions.setExpression({ expressionItems: items, correctAnswer: expression.correctAnswer }));
+    }
+  };
 
   return (
     <CatQuizComponent
@@ -25,7 +36,7 @@ export const CatQuiz: FC = () => {
           dispatch(catGameActions.removeHeart());
         }
       }}
-      onSelectAnswer={(selectedAnswer: string) => dispatch(catQuizActions.setSelectedAnswer(selectedAnswer))}
+      onChangeOrder={handleChangeOrder}
       onNext={() => {
         const complexity = Math.floor(currentScore / 10) + 2;
         dispatch(catQuizActions.setExpression(generateCatQuiz(complexity)));

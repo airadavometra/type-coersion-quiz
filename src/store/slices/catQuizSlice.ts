@@ -10,8 +10,8 @@ interface State {
 }
 
 const initialState: State = {
-  complexity: 3,
-  expression: generateCatQuiz(3),
+  complexity: 2,
+  expression: generateCatQuiz(2),
   selectedAnswer: null,
   resolved: false,
 };
