@@ -1,6 +1,6 @@
 import { CatQuizData } from '@app-types/catQuizData';
-import { operands, possibleAnswers } from '@app-types/operands';
-import { binaryOperators, leftSideUnaryOperators, rightSideUnaryOperators } from '@app-types/operators';
+import { operands } from '@app-types/operands';
+import { binaryOperators, leftSideUnaryOperators } from '@app-types/operators';
 
 function randomInteger(from: number, to: number) {
   const randomNumber = from + Math.random() * (to - from);
