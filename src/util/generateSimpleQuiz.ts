@@ -1,5 +1,5 @@
 import { operands, possibleAnswers } from '@app-types/operands';
-import { binaryOperators, leftSideUnaryOperators, rightSideUnaryOperators } from '@app-types/operators';
+import { binaryOperators, leftSideUnaryOperators } from '@app-types/operators';
 import { SimpleQuizData } from '@app-types/simpleQuizData';
 
 function randomInteger(from: number, to: number) {
