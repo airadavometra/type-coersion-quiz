@@ -17,9 +17,10 @@
     }
   }
 }
-.operandContainer,
-.emptyCellsContainer {
+.operandContainer {
   display: flex;
+  flex-wrap: wrap;
+  gap: clamp(24px, 3vw, 48px);
 }
 .nonClickableCell {
   &:hover {

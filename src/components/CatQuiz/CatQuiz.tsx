@@ -34,7 +34,7 @@ export const CatQuiz: FC<CatQuizProps> = ({
         <Code code={expressionData?.correctAnswer || ''} />
       </div>
       <span className={classNames(classes.quizItem, classes.howToPlay)}>
-        Put cards in the right order to get the expected result
+        Put the cards in the correct order to get the expected result
       </span>
       <div className={classNames(classes.quizItem, classes.operandContainer)}>
         {expressionData?.expressionItems.map((item) => (

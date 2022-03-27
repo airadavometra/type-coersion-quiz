@@ -4,9 +4,6 @@
   background-color: var(--black);
   border: clamp(1px, 1vw, 3px) solid var(--whiteFaded);
   border-radius: 2rem;
-  &:not(:last-child) {
-    margin-right: clamp(24px, 3vw, 48px);
-  }
   & > pre > code {
     white-space: nowrap !important;
   }
