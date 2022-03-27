@@ -28,11 +28,20 @@
   }
 }
 .expectedResultContainer {
-  margin-bottom: clamp(12px, 2vw, 24px) !important;
   font-size: 2.4rem;
 }
 .expectedResult {
   font-family: var(--header-font);
   color: var(--white);
   text-transform: uppercase;
+}
+.errorMessage {
+  @media (min-width: 500px) {
+    & > span {
+      white-space: nowrap;
+    }
+    & > span > pre > code {
+      white-space: nowrap !important;
+    }
+  }
 }

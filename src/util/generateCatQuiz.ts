@@ -46,27 +46,30 @@ const generateCatQuizInternal = (complexity: number): CatQuizData => {
     selectedOperators.push(operator);
     const needParentheses = i === operandsAmount - 2 ? 0 : randomInteger(0, 2);
     if (needParentheses) {
-      expression = `(${expression} ${operator} ${selectedOperands.pop() as string})`;
+      const operand = selectedOperands.pop() as string;
+      expression = `(${expression} ${operator} ${operand})`;
       selectedOperators.push('(');
       selectedOperators.push(')');
     } else {
-      expression = `${expression} ${operator} ${selectedOperands.pop() as string}`;
+      const operand = selectedOperands.pop() as string;
+      expression = `${expression} ${operator} ${operand}`;
     }
   }
-  const correctAnswerRaw = eval(expression);
-  let correctAnswer = '';
-  if (typeof correctAnswerRaw === 'string') {
-    correctAnswer = `"${String(eval(expression))}"`;
+  const expectedResultRaw = eval(expression);
+  let expectedResult = '';
+  if (typeof expectedResultRaw === 'string') {
+    expectedResult = `"${String(eval(expression))}"`;
   } else {
-    correctAnswer = String(eval(expression));
+    expectedResult = String(eval(expression));
   }
   return {
     expressionItems: shuffle([...selectedOperandsCopy, ...selectedOperators]),
-    correctAnswer: correctAnswer,
+    expectedResult: expectedResult,
+    correctAnswer: expression,
   };
 };
 
-export const generateCatQuiz = (complexity: number): CatQuizData | undefined => {
+export const generateCatQuiz = (complexity: number): CatQuizData => {
   while (true) {
     try {
       return generateCatQuizInternal(complexity);

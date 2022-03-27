@@ -6,7 +6,7 @@ import classes from './PossibleAnswers.module.scss';
 export interface PossibleAnswersProps {
   className: string;
   possibleAnswers: string[];
-  correntAnswer: string;
+  correctAnswer: string;
   selectedAnswer: string | null;
   resolved: boolean;
   onSelectAnswer(selectedAnswer: string): void;
@@ -15,7 +15,7 @@ export interface PossibleAnswersProps {
 export const PossibleAnswers: FC<PossibleAnswersProps> = ({
   className,
   possibleAnswers,
-  correntAnswer,
+  correctAnswer,
   selectedAnswer,
   resolved,
   onSelectAnswer,
@@ -27,8 +27,8 @@ export const PossibleAnswers: FC<PossibleAnswersProps> = ({
           <label className={classNames(classes.customCheckbox)}>
             <input
               className={classNames({
-                [classes.correct]: resolved && item === correntAnswer,
-                [classes.wrong]: resolved && item === selectedAnswer && selectedAnswer !== correntAnswer,
+                [classes.correct]: resolved && item === correctAnswer,
+                [classes.wrong]: resolved && item === selectedAnswer && selectedAnswer !== correctAnswer,
               })}
               disabled={resolved}
               type="checkbox"

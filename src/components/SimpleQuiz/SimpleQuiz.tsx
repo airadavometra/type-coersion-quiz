@@ -35,7 +35,7 @@ export const SimpleQuiz: FC<SimpleQuizProps> = ({
       <PossibleAnswers
         className={classes.quizItem}
         possibleAnswers={expressionData?.possibleAnswers ?? []}
-        correntAnswer={expressionData?.correctAnswer ?? ''}
+        correctAnswer={expressionData?.correctAnswer ?? ''}
         selectedAnswer={selectedAnswer}
         resolved={resolved}
         onSelectAnswer={onSelectAnswer}

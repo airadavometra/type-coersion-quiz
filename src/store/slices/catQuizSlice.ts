@@ -4,16 +4,20 @@ import { generateCatQuiz } from 'util/generateCatQuiz';
 
 interface State {
   complexity: number;
-  expression: CatQuizData | undefined;
-  selectedAnswer: string | null;
+  expression: CatQuizData;
+  selectedAnswer: string;
   resolved: boolean;
+  isCorrect?: boolean;
 }
+
+const initialQuizData = generateCatQuiz(2);
 
 const initialState: State = {
   complexity: 2,
-  expression: generateCatQuiz(2),
-  selectedAnswer: null,
+  expression: initialQuizData,
+  selectedAnswer: initialQuizData?.expressionItems.join(''),
   resolved: false,
+  isCorrect: undefined,
 };
 const slice = createSlice({
   name: 'catQuizSlice',
@@ -24,14 +28,16 @@ const slice = createSlice({
     },
     setExpression: (state, { payload: expression }) => {
       state.expression = expression;
-      state.selectedAnswer = null;
+      state.selectedAnswer = expression.expressionItems.join('');
       state.resolved = false;
+      state.isCorrect = undefined;
     },
     setSelectedAnswer: (state, { payload: selectedAnswer }) => {
       state.selectedAnswer = selectedAnswer;
     },
-    resolveExpression: (state) => {
+    resolveExpression: (state, { payload: isCorrect }) => {
       state.resolved = true;
+      state.isCorrect = isCorrect;
     },
   },
 });

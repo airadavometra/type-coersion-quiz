@@ -8,47 +8,69 @@ import { DropResult } from 'react-beautiful-dnd';
 export const CatQuiz: FC = () => {
   const {
     catGameStore: { currentScore, isGameOver },
-    catQuizStore: { expression, selectedAnswer, resolved },
+    catQuizStore: { expression, selectedAnswer, resolved, isCorrect },
   } = useAppSelector((state) => state);
   const dispatch = useAppDispatch();
 
   const handleChangeOrder = (result: DropResult) => {
-    if (expression && result.destination) {
-      const items = Array.from(expression?.expressionItems);
+    if (result.destination) {
+      const items = Array.from(expression.expressionItems);
       const [reorderedItem] = items.splice(result.source.index, 1);
       items.splice(result.destination.index, 0, reorderedItem);
-
-      dispatch(catQuizActions.setExpression({ expressionItems: items, correctAnswer: expression.correctAnswer }));
+      dispatch(
+        catQuizActions.setExpression({
+          expressionItems: items,
+          expectedResult: expression.expectedResult,
+          correctAnswer: expression.correctAnswer,
+        })
+      );
+      dispatch(catQuizActions.setSelectedAnswer(items.join('')));
     }
+  };
+
+  const handleResolve = () => {
+    try {
+      const answerRaw = eval(selectedAnswer);
+      let answer = '';
+      if (typeof answerRaw === 'string') {
+        answer = `"${String(eval(selectedAnswer))}"`;
+      } else {
+        answer = String(eval(selectedAnswer));
+      }
+      if (answer === expression.expectedResult) {
+        dispatch(catGameActions.addPoints(1));
+        dispatch(catQuizActions.resolveExpression(true));
+      } else {
+        dispatch(catGameActions.removeHeart());
+        dispatch(catQuizActions.resolveExpression(false));
+      }
+    } catch {
+      dispatch(catGameActions.removeHeart());
+      dispatch(catQuizActions.resolveExpression(false));
+    }
+  };
+  const handleNext = () => {
+    const complexity = Math.floor(currentScore / 10) + 2;
+    dispatch(catQuizActions.setExpression(generateCatQuiz(complexity)));
+    dispatch(catQuizActions.setComplexity(complexity));
+  };
+  const handleStartOver = () => {
+    dispatch(catGameActions.resetGame());
+    const complexity = Math.floor(currentScore / 10) + 2;
+    dispatch(catQuizActions.setExpression(generateCatQuiz(complexity)));
+    dispatch(catQuizActions.setComplexity(complexity));
   };
 
   return (
     <CatQuizComponent
       expressionData={expression}
-      selectedAnswer={selectedAnswer}
       resolved={resolved}
-      onResolve={() => {
-        dispatch(catQuizActions.resolveExpression());
-        if (selectedAnswer === expression?.correctAnswer) {
-          dispatch(catGameActions.addPoints(1));
-        }
-        if (selectedAnswer !== expression?.correctAnswer) {
-          dispatch(catGameActions.removeHeart());
-        }
-      }}
+      isCorrect={isCorrect}
+      onResolve={handleResolve}
       onChangeOrder={handleChangeOrder}
-      onNext={() => {
-        const complexity = Math.floor(currentScore / 10) + 2;
-        dispatch(catQuizActions.setExpression(generateCatQuiz(complexity)));
-        dispatch(catQuizActions.setComplexity(complexity));
-      }}
+      onNext={handleNext}
       isGameOver={isGameOver}
-      onStartOver={() => {
-        const complexity = Math.floor(currentScore / 10) + 2;
-        dispatch(catGameActions.resetGame());
-        dispatch(catQuizActions.setExpression(generateCatQuiz(complexity)));
-        dispatch(catQuizActions.setComplexity(complexity));
-      }}
+      onStartOver={handleStartOver}
     />
   );
 };
