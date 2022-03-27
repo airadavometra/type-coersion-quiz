@@ -7,6 +7,18 @@
   & > pre > code {
     white-space: nowrap !important;
   }
+  &.correct,
+  &.correct:hover {
+    border: clamp(1px, 1vw, 3px) solid var(--white);
+    box-shadow: 0 0 0.5rem var(--white), inset 0 0 0.5rem var(--white), 0 0 2rem var(--greenFaded),
+      inset 0 0 2rem var(--greenFaded), 0 0 4rem var(--greenFaded), inset 0 0 4rem var(--greenFaded);
+  }
+  &.wrong,
+  &.wrong:hover {
+    border: clamp(1px, 1vw, 3px) solid var(--white);
+    box-shadow: 0 0 0.5rem var(--white), inset 0 0 0.5rem var(--white), 0 0 2rem var(--redFaded),
+      inset 0 0 2rem var(--redFaded), 0 0 4rem var(--redFaded), inset 0 0 4rem var(--redFaded);
+  }
   @media (hover: hover) {
     &:hover {
       border: clamp(1px, 1vw, 3px) solid var(--white);

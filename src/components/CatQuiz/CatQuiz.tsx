@@ -8,9 +8,9 @@ import React, { FC } from 'react';
 import classes from './CatQuiz.module.scss';
 
 export interface CatQuizProps {
-  expressionData: CatQuizData | undefined;
-  selectedAnswer: string | null;
+  expressionData: CatQuizData;
   resolved: boolean;
+  isCorrect?: boolean;
   isGameOver: boolean;
   onChangeOrder(result: DropResult): void;
   onResolve(): void;
@@ -20,8 +20,8 @@ export interface CatQuizProps {
 
 export const CatQuiz: FC<CatQuizProps> = ({
   expressionData,
-  selectedAnswer,
   resolved,
+  isCorrect,
   isGameOver,
   onChangeOrder,
   onResolve,
@@ -32,25 +32,32 @@ export const CatQuiz: FC<CatQuizProps> = ({
     <div className={classes.main}>
       <div className={classNames(classes.quizItem, classes.expectedResultContainer)}>
         <span className={classNames(classes.expectedResult)}>Expected result:</span>
-        <Code code={expressionData?.correctAnswer || ''} />
+        <Code code={expressionData.expectedResult} />
       </div>
-      <span className={classNames(classes.quizItem, classes.howToPlay)}>
-        Drag the cards to put them in the correct order to get the expected result
-      </span>
+      {resolved && isCorrect !== undefined && !isCorrect && (
+        <div className={classNames(classes.quizItem, classes.errorMessage)}>
+          <span>Oops! Your guess is wrong. </span>
+          <wbr />
+          <span>
+            Correct answer: <Code code={expressionData.correctAnswer} />
+          </span>
+        </div>
+      )}
       <div className={classNames(classes.quizItem)}>
         <DragDropContext onDragEnd={onChangeOrder}>
           <Droppable droppableId="expressionItems" direction="horizontal">
             {(provided) => (
               <ul className={classNames(classes.operandContainer)} {...provided.droppableProps} ref={provided.innerRef}>
                 {expressionData?.expressionItems.map((item, index) => (
-                  <Draggable key={item} draggableId={item} index={index}>
+                  <Draggable key={`${item}${index}`} draggableId={`${item}${index}`} index={index}>
                     {(provided) => (
                       <li {...provided.draggableProps} {...provided.dragHandleProps} ref={provided.innerRef}>
-                        <CatGameCard text={item} />
+                        <CatGameCard text={item} resolved={resolved} isCorrect={isCorrect} />
                       </li>
                     )}
                   </Draggable>
                 ))}
+                {provided.placeholder}
               </ul>
             )}
           </Droppable>
@@ -59,15 +66,7 @@ export const CatQuiz: FC<CatQuizProps> = ({
       <Button
         className={classes.quizItem}
         onClick={resolved ? (isGameOver ? onStartOver : onNext) : onResolve}
-        text={
-          resolved
-            ? isGameOver
-              ? 'Start over'
-              : 'Next question'
-            : selectedAnswer == null
-            ? 'I give up'
-            : 'Check my answer'
-        }
+        text={resolved ? (isGameOver ? 'Start over' : 'Next question') : 'Check my answer'}
       />
     </div>
   );
