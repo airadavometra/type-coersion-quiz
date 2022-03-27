@@ -27,6 +27,7 @@
   }
 }
 .expectedResultContainer {
+  margin-bottom: clamp(12px, 2vw, 24px) !important;
   font-size: 2.4rem;
 }
 .expectedResult {
