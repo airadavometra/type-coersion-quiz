@@ -18,6 +18,11 @@
   }
 }
 .operandContainer {
+  margin-left: 32rem;
+  @media (max-width: 562px) {
+    margin-left: 16rem;
+  }
+
   display: flex;
   flex-wrap: wrap;
   gap: 32rem 0;
