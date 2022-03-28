@@ -11,6 +11,7 @@ export const Footer: FunctionComponent = () => {
           href="https://github.com/airadavometra/type-coersion-quiz"
           target="_blank"
           rel="noopener noreferrer"
+          onClick={() => gtag('event', 'click', { event_category: 'github link', event_label: 'github link' })}
         >
           <div>GitHub&nbsp;</div>
         </a>
@@ -18,7 +19,15 @@ export const Footer: FunctionComponent = () => {
       </div>
       <div className={classes.linksContainer}>
         <span>Made by&nbsp;</span>
-        <a className={classes.link} href="https://airadavometra.space" target="_blank" rel="noopener noreferrer">
+        <a
+          className={classes.link}
+          href="https://airadavometra.space"
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={() =>
+            gtag('event', 'click', { event_category: 'airadavometra link', event_label: 'airadavometra link' })
+          }
+        >
           <div>airadavometra</div>
         </a>
       </div>
