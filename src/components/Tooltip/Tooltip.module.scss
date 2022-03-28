@@ -5,14 +5,14 @@
 .tooltipBox {
   width: max-content;
   max-width: 50vw;
-  padding: clamp(8px, 2vw, 16px);
+  padding: 12rem;
   position: absolute;
   top: calc(100% + 5px);
   right: 0;
-  border-radius: clamp(8px, 2vw, 16px);
+  border-radius: 12rem;
   background: var(--white);
   color: var(--black);
-  font-size: clamp(8px, 2vw, 16px);
+  font-size: 16rem;
   display: none;
   z-index: 2;
   &.visible {

@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import React, { FC, useState } from 'react';
+import React, { FC, useCallback, useState } from 'react';
 import classes from './Tooltip.module.scss';
 
 export interface TooltipProps {
@@ -8,6 +8,10 @@ export interface TooltipProps {
 
 export const Tooltip: FC<TooltipProps> = ({ children, text }) => {
   const [show, setShow] = useState(false);
+
+  const handleTooltipClick = useCallback(() => {
+    setShow(!show);
+  }, [show, setShow]);
 
   return (
     <div className={classes.tooltipContainer}>
@@ -18,7 +22,7 @@ export const Tooltip: FC<TooltipProps> = ({ children, text }) => {
       >
         {text}
       </div>
-      <div onMouseEnter={() => setShow(true)} onMouseLeave={() => setShow(false)}>
+      <div onClick={handleTooltipClick} onMouseEnter={() => setShow(true)} onMouseLeave={() => setShow(false)}>
         {children}
       </div>
     </div>

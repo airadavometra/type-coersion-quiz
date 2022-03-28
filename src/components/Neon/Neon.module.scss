@@ -1,6 +1,5 @@
 .neon {
-  font-size: clamp(36px, 6vw, 96px);
-  letter-spacing: clamp(4px, 1vw, 8px);
+  letter-spacing: 6rem;
   text-align: center;
   text-transform: uppercase;
   animation: neon 1.5s infinite alternate;
@@ -18,8 +17,8 @@
   54%,
   56%,
   100% {
-    text-shadow: -0.1rem -0.1rem 0.5rem var(--white), 0.1rem 0.1rem 0.5rem var(--white), 0 0 1rem var(--pink),
-      0 0 2rem var(--pink), 0 0 3rem var(--pink), 0 0 4rem var(--pink), 0 0 5rem var(--pink);
+    text-shadow: -2rem -2rem 8rem var(--white), 2rem 2rem 8rem var(--white), 0 0 16rem var(--pink),
+      0 0 32rem var(--pink), 0 0 48rem var(--pink), 0 0 64rem var(--pink), 0 0 70rem var(--pink);
   }
 
   20%,

@@ -5,7 +5,10 @@
   right: 0;
 }
 .heart {
-  font-size: clamp(18px, 3vw, 36px);
+  font-size: 32rem;
+  @media (max-width: 562px) {
+    font-size: 18rem;
+  }
   &:not(:last-child) {
     margin-right: 18px;
   }

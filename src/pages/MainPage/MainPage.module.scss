@@ -1,5 +1,5 @@
 .main {
-  max-width: 50vw;
+  max-width: 690px;
   height: 100%;
   margin: auto;
   flex-grow: 1;
@@ -7,13 +7,13 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  @media (max-width: 500px) {
+  @media (max-width: 562px) {
     max-width: 100vw;
-    margin: clamp(24px, 3vw, 36px);
+    margin: 24rem;
   }
 }
 .title {
-  margin-bottom: clamp(24px, 4vw, 56px);
+  margin-bottom: 32rem;
 }
 .description {
   display: flex;
@@ -21,14 +21,14 @@
   line-height: 1.4;
 }
 .descriptionArticle:not(:last-child) {
-  margin-bottom: clamp(18px, 2vw, 24px);
+  margin-bottom: 24rem;
 }
 .gameLink {
   &:hover,
   &:focus {
     & > * {
-      text-shadow: -0.1rem -0.1rem 0.5rem var(--white), 0.1rem 0.1rem 0.5rem var(--white), 0 0 1rem var(--pink),
-        0 0 2rem var(--pink), 0 0 3rem var(--pink), 0 0 4rem var(--pink), 0 0 5rem var(--pink);
+      text-shadow: -2rem -2rem 8rem var(--white), 2rem 2rem 8rem var(--white), 0 0 16rem var(--pink),
+        0 0 32rem var(--pink), 0 0 48rem var(--pink), 0 0 64rem var(--pink), 0 0 70rem var(--pink);
     }
   }
 }

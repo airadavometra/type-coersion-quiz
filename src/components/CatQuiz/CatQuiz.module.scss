@@ -3,15 +3,15 @@
   flex-direction: column;
   justify-items: center;
   align-items: center;
-  @media (max-width: 500px) {
+  @media (max-width: 562px) {
     padding-top: 10vh;
   }
 }
 .quizItem {
   &:not(:last-child) {
-    margin-bottom: clamp(36px, 4vw, 96px);
+    margin-bottom: 48rem;
   }
-  @media (max-width: 500px) {
+  @media (max-width: 562px) {
     &:last-child {
       margin-top: 10vh;
     }
@@ -20,7 +20,10 @@
 .operandContainer {
   display: flex;
   flex-wrap: wrap;
-  gap: clamp(24px, 3vw, 48px);
+  gap: 32rem;
+  @media (max-width: 562px) {
+    gap: 16rem;
+  }
 }
 .nonClickableCell {
   &:hover {
@@ -28,7 +31,10 @@
   }
 }
 .expectedResultContainer {
-  font-size: 2.4rem;
+  font-size: 32rem;
+  @media (max-width: 562px) {
+    font-size: 18rem;
+  }
 }
 .expectedResult {
   font-family: var(--header-font);
@@ -36,7 +42,7 @@
   text-transform: uppercase;
 }
 .errorMessage {
-  @media (min-width: 500px) {
+  @media (min-width: 562px) {
     & > span {
       white-space: nowrap;
     }

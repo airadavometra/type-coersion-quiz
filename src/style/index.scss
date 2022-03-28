@@ -26,20 +26,30 @@ html {
   width: 100%;
   min-height: 100vh;
   overflow-x: hidden;
+  font-size: 1px;
+  @media (max-width: 562px) {
+    font-size: 0.24155vw;
+  }
 }
 
 body {
   width: 100vw;
   height: auto;
   font-family: var(--simple-text-font);
-  font-size: clamp(14px, 3vw, 24px);
+  font-size: 24rem;
   color: var(--text-color);
   background-color: var(--background-color);
+  @media (max-width: 562px) {
+    font-size: 16rem;
+  }
 }
 h1 {
   font-family: var(--header-font);
-  font-size: clamp(24px, 10vw, 72px);
+  font-size: 86rem;
   font-weight: 200;
+  @media (max-width: 562px) {
+    font-size: 32rem;
+  }
 }
 
 input,

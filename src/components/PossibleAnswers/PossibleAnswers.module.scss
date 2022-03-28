@@ -1,9 +1,9 @@
 .main {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: clamp(24px, 3vw, 36px);
-  @media (max-width: 500px) {
-    grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, minmax(auto, auto));
+  grid-gap: 24rem;
+  @media (max-width: 562px) {
+    grid-template-columns: repeat(2, minmax(auto, auto));
   }
 }
 .customCheckboxLabel {
@@ -12,9 +12,9 @@
   user-select: none;
   cursor: pointer;
   &::before {
-    margin-right: clamp(6px, 5vw, 12px);
-    width: clamp(12px, 2vw, 24px);
-    height: clamp(12px, 2vw, 24px);
+    margin-right: 12rem;
+    width: 16rem;
+    height: 16rem;
     content: '';
     display: inline-block;
     flex-shrink: 0;
@@ -38,17 +38,17 @@ input[type='checkbox'] {
   &:checked + .customCheckboxLabel::before,
   &:focus:enabled + .customCheckboxLabel::before,
   &:hover:enabled + .customCheckboxLabel::before {
-    box-shadow: 0 0 0.5rem var(--white), inset 0 0 0.5rem var(--white), 0 0 2rem var(--pink), inset 0 0 2rem var(--pink),
-      0 0 4rem var(--pink), inset 0 0 4rem var(--pink);
+    box-shadow: 0 0 8rem var(--white), inset 0 0 8rem var(--white), 0 0 32rem var(--pink), inset 0 0 32rem var(--pink),
+      0 0 64rem var(--pink), inset 0 0 64rem var(--pink);
   }
   &.correct + .customCheckboxLabel::before {
-    box-shadow: 0 0 0.5rem var(--white), inset 0 0 0.5rem var(--white), 0 0 2rem var(--green),
-      inset 0 0 2rem var(--green), 0 0 4rem var(--green), inset 0 0 4rem var(--green);
+    box-shadow: 0 0 8rem var(--white), inset 0 0 8rem var(--white), 0 0 32rem var(--green), inset 0 0 32rem var(--green),
+      0 0 64rem var(--green), inset 0 0 64rem var(--green);
     opacity: 1;
   }
   &.wrong + .customCheckboxLabel::before {
-    box-shadow: 0 0 0.5rem var(--white), inset 0 0 0.5rem var(--white), 0 0 2rem var(--red), inset 0 0 2rem var(--red),
-      0 0 4rem var(--red), inset 0 0 4rem var(--red);
+    box-shadow: 0 0 8rem var(--white), inset 0 0 8rem var(--white), 0 0 32rem var(--red), inset 0 0 32rem var(--red),
+      0 0 64rem var(--red), inset 0 0 64rem var(--red);
     opacity: 1;
   }
   /* stylelint-enable */

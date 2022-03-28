@@ -1,33 +1,32 @@
 .card {
-  padding: clamp(24px, 3vw, 48px) clamp(12px, 2vw, 24px);
+  padding: 32rem 16rem;
   font-family: var(--header-font);
   background-color: var(--black);
-  border: clamp(1px, 1vw, 3px) solid var(--whiteFaded);
-  border-radius: 2rem;
+  border: 2rem solid var(--whiteFaded);
+  border-radius: 16rem;
   & > pre > code {
     white-space: nowrap !important;
   }
   &.correct,
   &.correct:hover {
-    border: clamp(1px, 1vw, 3px) solid var(--white);
-    box-shadow: 0 0 0.5rem var(--white), inset 0 0 0.5rem var(--white), 0 0 2rem var(--greenFaded),
-      inset 0 0 2rem var(--greenFaded), 0 0 4rem var(--greenFaded), inset 0 0 4rem var(--greenFaded);
+    border: 2rem solid var(--white);
+    box-shadow: 0 0 8rem var(--white), inset 0 0 8rem var(--white), 0 0 32rem var(--greenFaded),
+      inset 0 0 32rem var(--greenFaded), 0 0 64rem var(--greenFaded), inset 0 0 64rem var(--greenFaded);
   }
   &.wrong,
   &.wrong:hover {
-    border: clamp(1px, 1vw, 3px) solid var(--white);
-    box-shadow: 0 0 0.5rem var(--white), inset 0 0 0.5rem var(--white), 0 0 2rem var(--redFaded),
-      inset 0 0 2rem var(--redFaded), 0 0 4rem var(--redFaded), inset 0 0 4rem var(--redFaded);
+    border: 2rem solid var(--white);
+    box-shadow: 0 0 8rem var(--white), inset 0 0 8rem var(--white), 0 0 32rem var(--redFaded),
+      inset 0 0 32rem var(--redFaded), 0 0 64rem var(--redFaded), inset 0 0 64rem var(--redFaded);
+  }
+  @media (max-width: 562px) {
+    padding: 16rem 8rem;
   }
   @media (hover: hover) {
     &:hover {
-      border: clamp(1px, 1vw, 3px) solid var(--white);
-      box-shadow: 0 0 0.5rem var(--white), inset 0 0 0.5rem var(--white), 0 0 2rem var(--pinkFaded),
-        inset 0 0 2rem var(--pinkFaded), 0 0 4rem var(--pinkFaded), inset 0 0 4rem var(--pinkFaded);
+      border: 2rem solid var(--white);
+      box-shadow: 0 0 8rem var(--white), inset 0 0 8rem var(--white), 0 0 32rem var(--pinkFaded),
+        inset 0 0 32rem var(--pinkFaded), 0 0 64rem var(--pinkFaded), inset 0 0 64rem var(--pinkFaded);
     }
-  }
-  @media (hover: none) {
-    box-shadow: 0 0 0.5rem var(--whiteFaded), inset 0 0 0.5rem var(--whiteFaded), 0 0 1rem var(--pinkFaded),
-      inset 0 0 1rem var(--pinkFaded), 0 0 2rem var(--pinkFaded), inset 0 0 2rem var(--pinkFaded);
   }
 }
