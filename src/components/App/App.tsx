@@ -55,9 +55,11 @@ export const App: FunctionComponent = () => {
 
   const location = useLocation();
   useEffect(() => {
-    window.gtag('config', 'G-1HK1RG5BD3', {
+    gtag('event', 'page_view', {
       page_title: location.pathname,
+      page_location: location.pathname,
       page_path: location.pathname,
+      send_to: 'G-Y865NKVDNB',
     });
   }, [location]);
 
