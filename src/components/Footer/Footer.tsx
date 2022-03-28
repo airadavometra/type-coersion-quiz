@@ -21,11 +21,7 @@ export const Footer: FunctionComponent = () => {
         <a className={classes.link} href="https://airadavometra.space" target="_blank" rel="noopener noreferrer">
           <div>airadavometra</div>
         </a>
-        <span>&nbsp;with ❤️ and&nbsp;</span>
-        <a className={classes.link} href="https://vlivanov.space" target="_blank" rel="noopener noreferrer">
-          <div>omhet&apos;s</div>
-        </a>
-        <span>&nbsp;helping</span>
+        <span>&nbsp;with ❤️</span>
       </div>
     </footer>
   );

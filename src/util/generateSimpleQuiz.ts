@@ -72,7 +72,7 @@ const generateSimpleQuizInternal = (complexity: number): SimpleQuizData => {
   };
 };
 
-export const generateSimpleQuiz = (complexity: number): SimpleQuizData | undefined => {
+export const generateSimpleQuiz = (complexity: number): SimpleQuizData => {
   while (true) {
     try {
       return generateSimpleQuizInternal(complexity);

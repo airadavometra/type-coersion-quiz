@@ -5,14 +5,18 @@
   justify-content: space-between;
   align-items: center;
 }
-.logo {
-  width: clamp(24px, 4vw, 48px);
-  height: clamp(24px, 4vw, 48px);
-  min-width: 24px;
-  margin-right: clamp(24px, 3vw, 36px);
+.icon {
+  width: clamp(12px, 2vw, 24px);
+  height: clamp(12px, 2vw, 24px);
+  min-width: 12px;
+  &:hover {
+    -webkit-filter: drop-shadow(0 0 0.5rem var(--pink));
+    filter: drop-shadow(0 0 0.5rem var(--pink));
+  }
 }
 .menu {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-right: clamp(24px, 3vw, 36px);
 }

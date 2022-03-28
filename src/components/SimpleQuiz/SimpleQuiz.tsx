@@ -7,7 +7,7 @@ import React, { FC } from 'react';
 import classes from './SimpleQuiz.module.scss';
 
 export interface SimpleQuizProps {
-  expressionData: SimpleQuizData | undefined;
+  expressionData: SimpleQuizData;
   selectedAnswer: string | null;
   resolved: boolean;
   isGameOver: boolean;
@@ -30,12 +30,12 @@ export const SimpleQuiz: FC<SimpleQuizProps> = ({
   return (
     <div className={classes.main}>
       <div className={classNames(classes.expression, classes.quizItem)}>
-        <Code code={expressionData?.expression as string} />
+        <Code code={`${expressionData.expression} = ?`} />
       </div>
       <PossibleAnswers
         className={classes.quizItem}
-        possibleAnswers={expressionData?.possibleAnswers ?? []}
-        correctAnswer={expressionData?.correctAnswer ?? ''}
+        possibleAnswers={expressionData.possibleAnswers}
+        correctAnswer={expressionData.correctAnswer}
         selectedAnswer={selectedAnswer}
         resolved={resolved}
         onSelectAnswer={onSelectAnswer}
