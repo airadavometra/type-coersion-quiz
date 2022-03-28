@@ -30,19 +30,21 @@ export const CatQuiz: FC<CatQuizProps> = ({
 }) => {
   return (
     <div className={classes.main}>
+      <div
+        className={classNames(classes.quizItem, classes.errorMessage, {
+          [classes.visible]: resolved && isCorrect !== undefined && !isCorrect,
+        })}
+      >
+        <span>Oops! Your guess is wrong. </span>
+        <wbr />
+        <span>
+          Correct answer: <Code code={expressionData.correctAnswer} />
+        </span>
+      </div>
       <div className={classNames(classes.quizItem, classes.expectedResultContainer)}>
         <span className={classNames(classes.expectedResult)}>Expected result:</span>
         <Code code={expressionData.expectedResult} />
       </div>
-      {resolved && isCorrect !== undefined && !isCorrect && (
-        <div className={classNames(classes.quizItem, classes.errorMessage)}>
-          <span>Oops! Your guess is wrong. </span>
-          <wbr />
-          <span>
-            Correct answer: <Code code={expressionData.correctAnswer} />
-          </span>
-        </div>
-      )}
       <div className={classNames(classes.quizItem)}>
         <DragDropContext onDragEnd={onChangeOrder}>
           <Droppable droppableId="expressionItems" direction="horizontal">

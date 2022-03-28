@@ -9,14 +9,8 @@
   }
 }
 .icon {
-  width: 32rem;
-  height: 32rem;
-  @media (max-width: 562px) {
-    width: 24rem;
-    height: 24rem;
-  }
-
-  min-width: 12px;
+  width: 24rem;
+  height: 24rem;
   &:hover {
     -webkit-filter: drop-shadow(0 0 8rem var(--pink));
     filter: drop-shadow(0 0 8rem var(--pink));

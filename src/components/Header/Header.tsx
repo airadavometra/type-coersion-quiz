@@ -12,7 +12,7 @@ export const Header: FunctionComponent = () => {
       <ul className={classes.menu}>
         <MenuItem text="About" path={PageRoot.Main} />
         <MenuItem text="eval()" path={PageRoot.Eval} />
-        <MenuItem text="Cat Quiz" path={PageRoot.CatQuiz} />
+        <MenuItem text="()lave" path={PageRoot.CatQuiz} />
       </ul>
       <Match path={PageRoot.Eval}>
         {(props) =>

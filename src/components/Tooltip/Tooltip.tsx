@@ -22,7 +22,12 @@ export const Tooltip: FC<TooltipProps> = ({ children, text }) => {
       >
         {text}
       </div>
-      <div onClick={handleTooltipClick} onMouseEnter={() => setShow(true)} onMouseLeave={() => setShow(false)}>
+      <div
+        className={classes.childrenContainer}
+        onClick={handleTooltipClick}
+        onMouseEnter={() => setShow(true)}
+        onMouseLeave={() => setShow(false)}
+      >
         {children}
       </div>
     </div>
