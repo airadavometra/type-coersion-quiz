@@ -1,4 +1,5 @@
 .tooltipContainer {
+  height: 24rem;
   position: relative;
 }
 
@@ -18,4 +19,7 @@
   &.visible {
     display: block;
   }
+}
+.childrenContainer {
+  height: 24rem;
 }

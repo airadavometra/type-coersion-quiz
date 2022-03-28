@@ -10,8 +10,8 @@ export const MainPage: FunctionComponent = () => {
       <Neon className={classes.title} text="Type coersion" />
       <div className={classes.description}>
         <span className={classes.descriptionArticle}>
-          Welcome to <b>8 Out Of 10 🐱 Does Types Coersion</b> game! Here you can practice and improve your JavaScript
-          type coersion knowledge 💪 We have two games for that:
+          Welcome to <b>Types Coersion quiz</b>! Here you can practice and improve your JavaScript type coersion
+          knowledge 💪 We have two games for that:
         </span>
         <span className={classes.descriptionArticle}>
           🙃 In{' '}
@@ -23,10 +23,10 @@ export const MainPage: FunctionComponent = () => {
         <span className={classes.descriptionArticle}>
           🙃{' '}
           <Link to={PageRoot.CatQuiz} className={classes.gameLink}>
-            <b>Cat Quiz</b>
+            <b>()lave</b>
           </Link>{' '}
-          is more tricky. You get some expected value and a set of operands and operators. And you should combine them
-          into the expression that returns expected value.
+          is more tricky (and somehow is a reverse of eval(), as you can guess). You get some expected value and a set
+          of operands and operators. And you should combine them into the expression that returns expected value.
         </span>
       </div>
     </div>
