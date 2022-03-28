@@ -21,15 +21,14 @@
   right: 32rem;
   color: var(--red);
   font-family: var(--header-font);
+  z-index: 2;
   @media (max-width: 562px) {
     gap: 0;
     bottom: 0%;
     right: 24rem;
   }
 
-  & > div > button {
-    background-color: transparent;
-    border: none;
+  & > button > div {
     &::before,
     &::after {
       position: absolute;
@@ -83,10 +82,11 @@
     }
   }
 
-  & > div {
+  & > button {
     width: fit-content;
     font-size: 2em;
-    z-index: 2;
+    background-color: transparent;
+    border: none;
     @media (hover: hover) {
       &:hover {
         animation: pulse 3s ease-out infinite;

@@ -19,29 +19,29 @@ export const App: FunctionComponent = () => {
   const [likesDocId, setLikesDocId] = useState<string>('');
   const likesCollectionRef = collection(db, 'likes');
 
-  const animateButton = (e) => {
-    e.preventDefault;
-    if (e.target.classList.contains(classes.animate)) {
-      return;
+  const animateButton = () => {
+    //ev.preventDefault;
+    const button = document.getElementById('likeBtn');
+    if (button) {
+      if (button.classList.contains(classes.animate)) {
+        return;
+      }
+      button.classList.add(classes.animate);
+      setTimeout(function () {
+        button.classList.remove(classes.animate);
+      }, 1000);
     }
-    e.target.classList.add(classes.animate);
-    setTimeout(function () {
-      e.target.classList.remove(classes.animate);
-    }, 1000);
   };
 
   useEffect(() => {
     const getLikesAmount = async () => {
       const data = await getDocs(likesCollectionRef);
-      const extractedData = data.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
+      const extractedData = data.docs.map((doc) => ({ ...doc.data(), id: doc.id })) as { id: string; amount: number }[];
 
       setTotalLikesAmount(Number(extractedData[0].amount));
       setLikesDocId(extractedData[0].id);
     };
     getLikesAmount();
-
-    const button = document.getElementById('likeBtn');
-    button?.addEventListener('click', animateButton, false);
   }, []);
 
   const onLikeClick = useCallback(async () => {
@@ -66,11 +66,11 @@ export const App: FunctionComponent = () => {
       <Header />
       <div className={classes.body}>
         <div className={classes.likesContainer}>
-          <div>
-            <button id="likeBtn" onClick={onLikeClick}>
+          <button onClick={onLikeClick}>
+            <div id="likeBtn" onClick={animateButton}>
               ❤️
-            </button>
-          </div>
+            </div>
+          </button>
           {totalLikesAmount}
         </div>
         <Router className={classes.router}>
