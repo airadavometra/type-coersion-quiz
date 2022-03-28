@@ -42,6 +42,11 @@
   text-transform: uppercase;
 }
 .errorMessage {
+  height: 100rem;
+  visibility: hidden;
+  &.visible {
+    visibility: visible;
+  }
   @media (min-width: 562px) {
     & > span {
       white-space: nowrap;
