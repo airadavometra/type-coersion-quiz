@@ -20,9 +20,15 @@
 .operandContainer {
   display: flex;
   flex-wrap: wrap;
-  gap: 32rem;
+  gap: 32rem 0;
   @media (max-width: 562px) {
-    gap: 16rem;
+    gap: 16rem 0;
+  }
+  & > li {
+    margin-right: 32rem;
+    @media (max-width: 562px) {
+      margin-right: 16rem;
+    }
   }
 }
 .nonClickableCell {
