@@ -23,6 +23,7 @@
       "@icons/*": ["icons/*"],
       "@style/*": ["style/*"],
       "@store/*": ["store/*"],
+      "@database/*": ["database/*"],
       "@api/*": ["api/*"],
       "@mocks/*": ["mocks/*"],
       "@app-types/*": ["types/*"],
