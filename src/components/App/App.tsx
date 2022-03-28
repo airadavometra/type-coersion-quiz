@@ -5,13 +5,20 @@ import { CatsQuizPage } from '@pages/CatsQuizPage/CatsQuizPage';
 import { MainPage } from '@pages/MainPage/MainPage';
 import { NotFoundPage } from '@pages/NotFoundPage/NotFoundPage';
 import { SimpleQuizPage } from '@pages/SimpleQuizPage/SimpleQuizPage';
-import { Router, RouteComponentProps } from '@reach/router';
-import React, { FunctionComponent } from 'react';
+import { Router, RouteComponentProps, useLocation } from '@reach/router';
+import React, { FunctionComponent, useEffect } from 'react';
 import classes from './App.module.scss';
 
 const RouterPage = (props: { pageComponent: JSX.Element } & RouteComponentProps) => props.pageComponent;
 
 export const App: FunctionComponent = () => {
+  const location = useLocation();
+  useEffect(() => {
+    window.gtag('config', 'G-1HK1RG5BD3', {
+      page_title: location.pathname,
+      page_path: location.pathname,
+    });
+  }, [location]);
   return (
     <div className={classes.main}>
       <Header />
