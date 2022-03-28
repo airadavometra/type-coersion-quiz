@@ -4,7 +4,7 @@
   justify-items: center;
   align-items: center;
   @media (max-width: 562px) {
-    padding-top: 10vh;
+    padding-top: 5vh;
   }
 }
 .quizItem {
@@ -13,7 +13,7 @@
   }
   @media (max-width: 562px) {
     &:last-child {
-      margin-top: 10vh;
+      margin-top: 5vh;
     }
   }
 }
