@@ -1,19 +1,22 @@
 .button {
-  padding: clamp(12px, 2vw, 24px) clamp(24px, 3vw, 48px);
+  padding: 24rem 48rem;
   font-family: var(--header-font);
   color: var(--white);
   text-transform: uppercase;
   background-color: var(--black);
-  border: clamp(1px, 1vw, 3px) solid var(--white);
-  border-radius: 2rem;
+  border: 2rem solid var(--white);
+  border-radius: 32rem;
+  @media (max-width: 562px) {
+    padding: 12rem 24rem;
+  }
   @media (hover: hover) {
     &:hover {
-      box-shadow: 0 0 0.5rem var(--white), inset 0 0 0.5rem var(--white), 0 0 2rem var(--pink),
-        inset 0 0 2rem var(--pink), 0 0 4rem var(--pink), inset 0 0 4rem var(--pink);
+      box-shadow: 0 0 8rem var(--white), inset 0 0 8rem var(--white), 0 0 32rem var(--pink), inset 0 0 32rem var(--pink),
+        0 0 64rem var(--pink), inset 0 0 64rem var(--pink);
     }
   }
   @media (hover: none) {
-    box-shadow: 0 0 0.5rem var(--whiteFaded), inset 0 0 0.5rem var(--whiteFaded), 0 0 1rem var(--pinkFaded),
-      inset 0 0 1rem var(--pinkFaded), 0 0 2rem var(--pinkFaded), inset 0 0 2rem var(--pinkFaded);
+    box-shadow: 0 0 8rem var(--whiteFaded), inset 0 0 8rem var(--whiteFaded), 0 0 16rem var(--pinkFaded),
+      inset 0 0 16rem var(--pinkFaded), 0 0 32rem var(--pinkFaded), inset 0 0 32rem var(--pinkFaded);
   }
 }

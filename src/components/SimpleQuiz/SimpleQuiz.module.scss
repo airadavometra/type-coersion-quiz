@@ -3,20 +3,23 @@
   flex-direction: column;
   justify-items: center;
   align-items: center;
-  @media (max-width: 500px) {
+  @media (max-width: 562px) {
     padding-top: 10vh;
   }
 }
 .expression {
   width: fit-content;
-  font-size: clamp(18px, 3vw, 36px);
+  font-size: 32rem;
   user-select: none;
+  @media (max-width: 562px) {
+    font-size: 18rem;
+  }
 }
 .quizItem {
   &:not(:last-child) {
-    margin-bottom: clamp(36px, 6vw, 96px);
+    margin-bottom: 48rem;
   }
-  @media (max-width: 500px) {
+  @media (max-width: 562px) {
     &:last-child {
       margin-top: 10vh;
     }

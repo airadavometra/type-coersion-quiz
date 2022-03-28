@@ -1,10 +1,15 @@
 .main {
-  padding: clamp(24px, 3vw, 36px);
+  padding: 32rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  font-size: clamp(8px, 2vw, 16px);
+  font-size: 16rem;
   line-height: 1.4;
+
+  @media (max-width: 562px) {
+    padding: 24rem;
+    font-size: 8rem;
+  }
 }
 .linksContainer {
   display: flex;
@@ -19,13 +24,13 @@
   &:focus {
     opacity: 100%;
     & > * {
-      text-shadow: -0.1rem -0.1rem 0.5rem var(--white), 0.1rem 0.1rem 0.5rem var(--white), 0 0 1rem var(--pink),
-        0 0 2rem var(--pink), 0 0 3rem var(--pink), 0 0 4rem var(--pink), 0 0 5rem var(--pink);
+      text-shadow: -2rem -2rem 8rem var(--white), 2rem 2rem 8rem var(--white), 0 0 16rem var(--pink),
+        0 0 32rem var(--pink), 0 0 48rem var(--pink), 0 0 64rem var(--pink), 0 0 70rem var(--pink);
     }
   }
 }
 .githubLogo {
-  width: clamp(8px, 2vw, 16px);
-  height: clamp(8px, 2vw, 16px);
+  width: 16rem;
+  height: 16rem;
   fill: var(--pinkFaded);
 }
