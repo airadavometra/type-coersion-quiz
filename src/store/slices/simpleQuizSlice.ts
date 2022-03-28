@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import { generateSimpleQuiz } from 'util/generateSimpleQuiz';
 
 interface State {
-  expression: SimpleQuizData | undefined;
+  expression: SimpleQuizData;
   selectedAnswer: string | null;
   resolved: boolean;
 }

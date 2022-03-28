@@ -15,7 +15,7 @@ const initialQuizData = generateCatQuiz(2);
 const initialState: State = {
   complexity: 2,
   expression: initialQuizData,
-  selectedAnswer: initialQuizData?.expressionItems.join(''),
+  selectedAnswer: initialQuizData.expressionItems.join(''),
   resolved: false,
   isCorrect: undefined,
 };

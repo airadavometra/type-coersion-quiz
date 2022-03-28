@@ -25,7 +25,8 @@ export const MainPage: FunctionComponent = () => {
           <Link to={PageRoot.CatQuiz} className={classes.gameLink}>
             <b>Cat Quiz</b>
           </Link>{' '}
-          is more tricky. It&apos;s not ready yet, but it&apos;s going to be mindblowing! Just wait for it...
+          is more tricky. You get some expected value and a set of operands and operators. And you should combine them
+          into the expression that returns expected value.
         </span>
       </div>
     </div>

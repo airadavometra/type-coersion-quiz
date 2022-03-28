@@ -48,7 +48,7 @@ export const CatQuiz: FC<CatQuizProps> = ({
           <Droppable droppableId="expressionItems" direction="horizontal">
             {(provided) => (
               <ul className={classNames(classes.operandContainer)} {...provided.droppableProps} ref={provided.innerRef}>
-                {expressionData?.expressionItems.map((item, index) => (
+                {expressionData.expressionItems.map((item, index) => (
                   <Draggable key={`${item}${index}`} draggableId={`${item}${index}`} index={index}>
                     {(provided) => (
                       <li {...provided.draggableProps} {...provided.dragHandleProps} ref={provided.innerRef}>
