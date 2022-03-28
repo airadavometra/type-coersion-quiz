@@ -8,7 +8,7 @@ export const Footer: FunctionComponent = () => {
       <div className={classes.linksContainer}>
         <a
           className={classes.link}
-          href="https://github.com/airadavometra/8-out-of-10-cats-does-types-coersion"
+          href="https://github.com/airadavometra/type-coersion-quiz"
           target="_blank"
           rel="noopener noreferrer"
         >
