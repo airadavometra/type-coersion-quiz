@@ -7,10 +7,10 @@ import classes from './MainPage.module.scss';
 export const MainPage: FunctionComponent = () => {
   return (
     <div className={classes.main}>
-      <Neon className={classes.title} text="Types coersion" />
+      <Neon className={classes.title} text="Types coercion" />
       <div className={classes.description}>
         <span className={classes.descriptionArticle}>
-          Welcome to <b>Types Coersion quiz</b>! Here you can practice and improve your JavaScript types coersion
+          Welcome to <b>Types Coercion quiz</b>! Here you can practice and improve your JavaScript types coercion
           knowledge 💪 We have two games for that:
         </span>
         <span className={classes.descriptionArticle}>
