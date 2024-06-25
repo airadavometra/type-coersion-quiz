@@ -24,7 +24,7 @@ export const CatQuiz: FC = () => {
           correctAnswer: expression.correctAnswer,
         })
       );
-      dispatch(catQuizActions.setSelectedAnswer(items.join('')));
+      dispatch(catQuizActions.setSelectedAnswer(items.join(' ')));
     }
   };
 

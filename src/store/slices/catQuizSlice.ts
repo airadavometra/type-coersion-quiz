@@ -15,7 +15,7 @@ const initialQuizData = generateCatQuiz(2);
 const initialState: State = {
   complexity: 2,
   expression: initialQuizData,
-  selectedAnswer: initialQuizData.expressionItems.join(''),
+  selectedAnswer: initialQuizData.expressionItems.join(' '),
   resolved: false,
   isCorrect: undefined,
 };
@@ -28,7 +28,7 @@ const slice = createSlice({
     },
     setExpression: (state, { payload: expression }) => {
       state.expression = expression;
-      state.selectedAnswer = expression.expressionItems.join('');
+      state.selectedAnswer = expression.expressionItems.join(' ');
       state.resolved = false;
       state.isCorrect = undefined;
     },
