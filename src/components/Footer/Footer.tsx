@@ -1,8 +1,7 @@
-import { Link } from "react-router-dom";
+import { Heart } from "../../icons/Heart";
+import WidthContainer from "../WidthContainer/WidthContainer";
 import s from "./Footer.module.css";
 import classNames from "classnames";
-import WidthContainer from "../WidthContainer/WidthContainer";
-import { Heart } from "../../icons/Heart";
 
 export const Footer = () => {
   return (
@@ -12,9 +11,13 @@ export const Footer = () => {
           <span className={s.transparent}>Made with</span>
           <Heart className={classNames(s.heart, s.transparent)} />
           <span className={s.transparent}>by</span>
-          <Link to="https://www.airadavometra.space/" className={s.link}>
+          <a
+            href="https://www.airadavometra.space/"
+            className={s.link}
+            aria-label="Author's website"
+          >
             Daria
-          </Link>
+          </a>
         </div>
         <span className={s.transparent}>2024</span>
       </WidthContainer>
