@@ -1,0 +1,27 @@
+.footer {
+  width: 100%;
+  margin-top: auto;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  font-size: clamp(0.75rem, 0.3056rem + 0.9259vw, 1rem);
+  font-weight: var(--regular-font-weight);
+  color: var(--text-color);
+}
+.widthContainer {
+  display: flex;
+  justify-content: space-between;
+}
+.message {
+  display: flex;
+  gap: 0.25rem;
+  align-items: center;
+}
+.heart {
+  width: 1em;
+  height: 1em;
+  display: inline;
+  color: var(--text-color);
+}
+.transparent {
+  opacity: 0.6;
+}

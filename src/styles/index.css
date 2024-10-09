@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap");
+
+:root {
+  --font: "Montserrat", Verdana, serif;
+  --regular-font-weight: 400;
+  --semi-bold-font-weight: 600;
+  --title-font: "Montserrat", Arial, serif;
+
+  --black: #000000;
+  --white: #ffffff;
+  --black-transparent: #0000001a;
+  --white-transparent: hsla(0, 0%, 100%, 0.102);
+
+  --sky-blue: #3e7bff;
+
+  --lavender: #dde1fb;
+
+  --blue: #87a8ee;
+  --yellow: #ffdd53;
+  --red: #f18989;
+  --orange: #fdad6b;
+  --green: #5fc179;
+  --purple: #b98edc;
+  --grey: #b4b4b8;
+  --pink: #de7cb2;
+  --mint: #99edcc;
+  --beige: #e3bc9a;
+  --lime: #c8df52;
+
+  --text-color: var(--black);
+  --text-color-transparent: var(--black-transparent);
+  --background-color: var(--white);
+  --background-color-transparent: var(--white-transparent);
+}
+html,
+body,
+#root {
+  max-width: 100vw;
+  height: 100%;
+}
+body {
+  font-family: var(--font);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color-scheme: light dark;
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
+button {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+}
+a {
+  color: inherit;
+  text-decoration: inherit;
+  font-size: inherit;
+}
+
+.frozen {
+  overflow: hidden;
+}
+
+.transparent {
+  background-color: var(--white) !important;
+}
+.blue {
+  background-color: var(--blue) !important;
+}
+.yellow {
+  background-color: var(--yellow) !important;
+}
+.red {
+  background-color: var(--red) !important;
+}
+.pink {
+  background-color: var(--pink) !important;
+}
+.green {
+  background-color: var(--green) !important;
+}
+.purple {
+  background-color: var(--purple) !important;
+}
+.grey {
+  background-color: var(--grey) !important;
+}
+.orange {
+  background-color: var(--orange) !important;
+}
+.mint {
+  background-color: var(--mint) !important;
+}
+.beige {
+  background-color: var(--beige) !important;
+}
+.lime {
+  background-color: var(--lime) !important;
+}

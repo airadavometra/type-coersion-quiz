@@ -1,0 +1,24 @@
+.container {
+  display: flex;
+  gap: min(20px, 1rem);
+}
+.button {
+  width: clamp(2rem, 1.5455rem + 2.2727vw, 3rem);
+  height: clamp(2rem, 1.5455rem + 2.2727vw, 3rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--lavender);
+  border-radius: 100%;
+  font-weight: 600;
+}
+.button:hover {
+  opacity: 80%;
+}
+.icon {
+  width: clamp(1rem, 0.7727rem + 1.1364vw, 1.5rem);
+  color: var(--black);
+}
+.photo {
+  border-radius: 100%;
+}
