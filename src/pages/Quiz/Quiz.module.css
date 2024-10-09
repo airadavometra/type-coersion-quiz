@@ -1,0 +1,18 @@
+.widthContainer {
+  height: 100%;
+  display: flex;
+  gap: min(4rem, 96px);
+}
+.content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: min(4rem, 96px);
+  font-size: clamp(1rem, 0.5556rem + 0.9259vw, 1.25rem);
+}
+.section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: min(1.5rem, 32px);
+}
