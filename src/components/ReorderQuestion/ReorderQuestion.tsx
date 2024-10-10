@@ -49,14 +49,12 @@ export const ReorderQuestion: FC<ReorderQuestionProps> = ({
   };
 
   const handleDragEnd: OnDragEndResponder = (result) => {
-    const { source, destination } = result;
+    const { destination } = result;
 
     // dropped outside the list
     if (!destination) {
       return;
     }
-
-    console.log(source, destination, orderedExpressionItems);
 
     const items = Array.from(orderedExpressionItems);
     const [reorderedItem] = items.splice(result.source.index, 1);
@@ -67,14 +65,11 @@ export const ReorderQuestion: FC<ReorderQuestionProps> = ({
 
   return (
     <section className={s.section}>
-      <span>
-        Reorder the pieces to form an expression that matches the expected
+      <span className={s.task}>
+        Reorder the pieces to make an expression that returns the expected
         result:
-      </span>
-      <div className={s.expectedResult}>
-        <span className={classNames(s.expectedResult)}>Expected result:</span>
         <Code>{question.expectedResult}</Code>
-      </div>
+      </span>
       <DragDropContext onDragEnd={handleDragEnd}>
         <Droppable droppableId="expressionItems" direction="horizontal">
           {(provided) => (

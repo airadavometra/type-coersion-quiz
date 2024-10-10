@@ -5,8 +5,10 @@
   gap: min(2.5rem, 48px);
   align-items: center;
 }
-.codeWrapper {
+.task {
   display: flex;
+  align-items: center;
+  gap: min(1rem, 20px);
 }
 .answersGrid {
   display: grid;

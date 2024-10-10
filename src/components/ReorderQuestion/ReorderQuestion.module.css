@@ -8,7 +8,7 @@
 .codeWrapper {
   display: flex;
 }
-.expectedResult {
+.task {
   display: flex;
   align-items: center;
   gap: min(1rem, 20px);

@@ -6,7 +6,6 @@ import { VisuallyHidden } from "../VisuallyHidden/VisuallyHidden";
 import { NAVIGATION_ITEMS } from "../../constants/navigationItem";
 import { Close } from "../../icons/Close";
 import { Menu } from "../../icons/Menu";
-import { AuthButton } from "../AuthButton/AuthButton";
 
 type HeaderProps = {
   selectedMenuItemId?: number;
@@ -48,7 +47,9 @@ export const Header = ({
             isMobileMenuOpen ? "Close" : "Open"
           } menu`}</VisuallyHidden>
         </button>
-        <AuthButton className={s.authButton} />
+        <Link to="https://github.com/airadavometra/type-coersion-quiz">
+          GitHub
+        </Link>
       </WidthContainer>
     </header>
   );

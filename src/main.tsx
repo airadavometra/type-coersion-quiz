@@ -5,7 +5,6 @@ import "./styles/index.css";
 import "./styles/reset.css";
 import { Layout } from "./components/Layout/Layout";
 import { QuizPage } from "./pages/Quiz/Quiz";
-import { LeaderboardPage } from "./pages/Leaderboard/Leaderboard";
 
 const router = createBrowserRouter([
   {
@@ -21,14 +20,6 @@ const router = createBrowserRouter([
     element: (
       <Layout>
         <div>TODO: Cheat sheet page</div>
-      </Layout>
-    ),
-  },
-  {
-    path: "/leaderboard",
-    element: (
-      <Layout>
-        <LeaderboardPage />
       </Layout>
     ),
   },

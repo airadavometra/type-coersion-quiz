@@ -46,15 +46,6 @@ export const QuizPage = () => {
                 need a quick recap on type coercion rules.
               </span>
             </section>
-            <section>
-              <span>Compete on the Leader board!</span>
-              <span>
-                Log in to track your score and see how you rank! Only logged-in
-                players will appear on{" "}
-                <Link to="/leaderboard">the leader board</Link>.
-              </span>
-              <button>Log in</button>
-            </section>
           </>
         )}
       </div>

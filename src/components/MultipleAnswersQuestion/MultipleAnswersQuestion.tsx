@@ -39,10 +39,10 @@ export const MultipleAnswersQuestion: FC<MultipleAnswersQuestionProps> = ({
 
   return (
     <section className={s.section}>
-      <span>Select what this expression evaluates to: </span>
-      <div className={s.codeWrapper}>
+      <span className={s.task}>
+        What this expression evaluates to:
         <Code>{`${question.expression} = ?`}</Code>
-      </div>
+      </span>
       <fieldset className={s.answersGrid}>
         {question.possibleAnswers.map((item) => (
           <label key={`${question.expression} ${item}`}>
