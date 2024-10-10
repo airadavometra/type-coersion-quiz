@@ -2,6 +2,7 @@ import { useState } from "react";
 import WidthContainer from "../../components/WidthContainer/WidthContainer";
 import s from "./Quiz.module.css";
 import { Link } from "react-router-dom";
+import { Quiz } from "../../components/Quiz/Quiz";
 
 export const QuizPage = () => {
   const [isQuizStarted, setIsQuizStarted] = useState<boolean>(false);
@@ -10,7 +11,7 @@ export const QuizPage = () => {
     <WidthContainer className={s.widthContainer}>
       <div className={s.content}>
         {isQuizStarted ? (
-          <section className={s.section}>TODO Quiz</section>
+          <Quiz />
         ) : (
           <>
             <section className={s.section}>

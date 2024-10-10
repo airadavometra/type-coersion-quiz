@@ -16,7 +16,6 @@ type AuthButtonProps = {
 
 export const AuthButton: FC<AuthButtonProps> = ({ className }) => {
   const [user] = useAuthState(auth);
-  console.log(user);
 
   const handleSignIn = async () => {
     try {

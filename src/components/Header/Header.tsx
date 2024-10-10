@@ -3,7 +3,7 @@ import classNames from "classnames";
 import { Link } from "react-router-dom";
 import WidthContainer from "../WidthContainer/WidthContainer";
 import { VisuallyHidden } from "../VisuallyHidden/VisuallyHidden";
-import { navigation } from "../../constants/navigationItem";
+import { NAVIGATION_ITEMS } from "../../constants/navigationItem";
 import { Close } from "../../icons/Close";
 import { Menu } from "../../icons/Menu";
 import { AuthButton } from "../AuthButton/AuthButton";
@@ -24,7 +24,7 @@ export const Header = ({
       <WidthContainer className={s.widthContainer}>
         <nav className={s.navigationContainer}>
           <ul className={s.navigation}>
-            {navigation.map(({ id, title, path }) => (
+            {NAVIGATION_ITEMS.map(({ id, title, path }) => (
               <li className={s.linkContainer} key={id}>
                 <Link
                   to={path}

@@ -2,7 +2,7 @@ import { ReactNode, useEffect, useState } from "react";
 import s from "./Layout.module.css";
 import classNames from "classnames";
 import { useLocation } from "react-router-dom";
-import { navigation } from "../../constants/navigationItem";
+import { NAVIGATION_ITEMS } from "../../constants/navigationItem";
 import { Header } from "../Header/Header";
 import MobileMenu from "../MobileMenu/MobileMenu";
 import { Footer } from "../Footer/Footer";
@@ -20,7 +20,7 @@ export const Layout = ({ children }: LayoutProps) => {
   >();
 
   useEffect(() => {
-    const selectedMenuItem = navigation.find(
+    const selectedMenuItem = NAVIGATION_ITEMS.find(
       (nav) => nav.path === location.pathname
     );
     if (selectedMenuItem) {
