@@ -5,6 +5,7 @@ import "./styles/index.css";
 import "./styles/reset.css";
 import { Layout } from "./components/Layout/Layout";
 import { QuizPage } from "./pages/Quiz/Quiz";
+import { CheatsheetPage } from "./pages/Cheatsheet/Cheatsheet";
 
 const router = createBrowserRouter([
   {
@@ -19,7 +20,7 @@ const router = createBrowserRouter([
     path: "/cheatsheet",
     element: (
       <Layout>
-        <div>TODO: Cheat sheet page</div>
+        <CheatsheetPage />
       </Layout>
     ),
   },
