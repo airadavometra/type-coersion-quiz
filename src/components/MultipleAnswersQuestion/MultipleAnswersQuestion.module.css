@@ -14,9 +14,8 @@
   gap: min(1.5rem, 32px) min(3rem, 64px);
 }
 .customCheckboxLabel {
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  user-select: none;
   cursor: pointer;
 }
 .customCheckboxLabel::before {

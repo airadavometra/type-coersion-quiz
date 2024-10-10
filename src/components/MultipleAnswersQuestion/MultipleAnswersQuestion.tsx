@@ -25,12 +25,10 @@ export const MultipleAnswersQuestion: FC<MultipleAnswersQuestionProps> = ({
   );
 
   const handleGetNextQuestion = () => {
-    setIsCommited(false);
     onGetNextQuestion();
   };
 
   const handleStartNewGame = () => {
-    setIsCommited(false);
     onStartNewGame();
   };
 
@@ -41,11 +39,9 @@ export const MultipleAnswersQuestion: FC<MultipleAnswersQuestionProps> = ({
 
   return (
     <section className={s.section}>
-      <div>
-        <span>Task description</span>
-        <div className={s.codeWrapper}>
-          <Code>{`${question.expression} = ?`}</Code>
-        </div>
+      <span>Select what this expression evaluates to: </span>
+      <div className={s.codeWrapper}>
+        <Code>{`${question.expression} = ?`}</Code>
       </div>
       <fieldset className={s.answersGrid}>
         {question.possibleAnswers.map((item) => (

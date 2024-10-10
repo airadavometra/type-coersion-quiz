@@ -1,0 +1,24 @@
+.section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: min(2.5rem, 48px);
+  align-items: center;
+}
+.codeWrapper {
+  display: flex;
+}
+.expectedResult {
+  display: flex;
+  align-items: center;
+  gap: min(1rem, 20px);
+}
+.itemsContainer {
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+}
+.card {
+  margin: min(0.75rem, 16px);
+}

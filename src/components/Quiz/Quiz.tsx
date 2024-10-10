@@ -4,8 +4,14 @@ import { MAX_LIVES } from "../../constants/maxLives";
 import { QuizQuestion } from "../../types/quizQuestion";
 import { getMultipleAnswersQuestion } from "../../utils/getMultipleAnswersQuestion";
 import { MultipleAnswersQuestion } from "../MultipleAnswersQuestion/MultipleAnswersQuestion";
-import { MultipleAnswersQuestion as MultipleAnswersQuestionType } from "../../types/quizQuestion";
+import { ReorderQuestion } from "../ReorderQuestion/ReorderQuestion";
+import {
+  MultipleAnswersQuestion as MultipleAnswersQuestionType,
+  ReorderQuestion as ReorderQuestionType,
+} from "../../types/quizQuestion";
 import { getQuizComplexity } from "../../utils/getQuizComplexity";
+import { getRandomInteger } from "../../utils/getRandomInteger";
+import { getReorderQuestion } from "../../utils/getReorderQuestion";
 
 export const Quiz = () => {
   const [score, setScore] = useState<number>(0);
@@ -26,10 +32,12 @@ export const Quiz = () => {
   };
 
   const handleGetNextQuestion = () => {
-    // Get randomly 0 or 1
-    // If 0 - generate MultipleAnswersQuestion
-    // If 1 - generate ReorderQuestion
-    setQuestion(getMultipleAnswersQuestion(complexity));
+    const isMultipleAnswersQuestion = Boolean(getRandomInteger(0, 1));
+    if (isMultipleAnswersQuestion) {
+      setQuestion(getMultipleAnswersQuestion(complexity));
+    } else {
+      setQuestion(getReorderQuestion(complexity));
+    }
   };
 
   const handleStartNewGame = () => {
@@ -46,6 +54,7 @@ export const Quiz = () => {
       </section>
       {question.type === "MultipleAnswersQuestion" ? (
         <MultipleAnswersQuestion
+          key={question.expression}
           question={question as MultipleAnswersQuestionType}
           isGameOver={lives === 0}
           onGetNextQuestion={handleGetNextQuestion}
@@ -53,7 +62,14 @@ export const Quiz = () => {
           onCommitAnswer={handleCommitAnswer}
         />
       ) : (
-        <></>
+        <ReorderQuestion
+          key={question.correctAnswer}
+          question={question as ReorderQuestionType}
+          isGameOver={lives === 0}
+          onGetNextQuestion={handleGetNextQuestion}
+          onStartNewGame={handleStartNewGame}
+          onCommitAnswer={handleCommitAnswer}
+        />
       )}
     </>
   );
