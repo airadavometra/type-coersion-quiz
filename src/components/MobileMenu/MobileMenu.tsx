@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import s from "./MobileMenu.module.css";
-import { Link } from "react-router-dom";
 import { NAVIGATION_ITEMS } from "../../constants/navigationItem";
+import { Link } from "../Link/Link";
 
 const MobileMenu = () => {
   return (

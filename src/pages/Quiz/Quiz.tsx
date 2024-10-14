@@ -1,8 +1,8 @@
 import { useState } from "react";
 import WidthContainer from "../../components/WidthContainer/WidthContainer";
 import s from "./Quiz.module.css";
-import { Link } from "react-router-dom";
 import { Quiz } from "../../components/Quiz/Quiz";
+import { Link } from "../../components/Link/Link";
 
 export const QuizPage = () => {
   const [isQuizStarted, setIsQuizStarted] = useState<boolean>(false);
@@ -14,36 +14,20 @@ export const QuizPage = () => {
       ) : (
         <>
           <section className={s.section}>
-            <h1>JavaScript Type Coercion Quiz</h1>
-            <span>
-              Think you&apos;ve mastered JavaScript type coercion? Test your
-              knowledge here!
-            </span>
-            <span>Two Types of Challenges:</span>
-            <ol>
-              <li>
-                <span>Pick the Correct Result</span>
-                <span>
-                  You&apos;ll see an expression—choose what it evaluates to.
-                </span>
-              </li>
-              <li>
-                <span>Arrange to Match the Result</span>
-                <span>
-                  Reorder the provided pieces to create an expression that
-                  equals the expected result.
-                </span>
-              </li>
-            </ol>
-            <span>Ready to start?</span>
-            <button onClick={() => setIsQuizStarted(true)}>Start quiz</button>
+            <h1 className={s.title}>
+              Think you&apos;ve mastered <br />
+              JavaScript type coercion?
+            </h1>
+            <button onClick={() => setIsQuizStarted(true)} className={s.button}>
+              Test your knowledge!
+            </button>
           </section>
-          <section>
-            <span>Need a Refresher?</span>
-            <span>
-              Check out the <Link to="/cheatsheet">Cheat Sheet</Link> if you
-              need a quick recap on type coercion rules.
-            </span>
+          <section className={s.section2}>
+            <h2 className={s.title2}>Need a quick recap?</h2>
+            <p>
+              Check out the <Link to="/cheatsheet">Cheat Sheet</Link> about JS
+              type coercion rules.
+            </p>
           </section>
         </>
       )}

@@ -1,6 +1,5 @@
 import { ReactNode, useEffect, useState } from "react";
 import s from "./Layout.module.css";
-import classNames from "classnames";
 import { useLocation } from "react-router-dom";
 import { NAVIGATION_ITEMS } from "../../constants/navigationItem";
 import { Header } from "../Header/Header";
@@ -52,7 +51,7 @@ export const Layout = ({ children }: LayoutProps) => {
           selectedMenuItemId={selectedMenuItemId}
         />
         {isMobileMenuOpen && <MobileMenu />}
-        <main className={classNames(s.main, s.helperColor)}>{children}</main>
+        <main className={s.main}>{children}</main>
         <Footer />
       </div>
     </>

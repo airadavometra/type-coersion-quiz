@@ -1,11 +1,12 @@
 import s from "./Header.module.css";
 import classNames from "classnames";
-import { Link } from "react-router-dom";
 import WidthContainer from "../WidthContainer/WidthContainer";
 import { VisuallyHidden } from "../VisuallyHidden/VisuallyHidden";
 import { NAVIGATION_ITEMS } from "../../constants/navigationItem";
 import { Close } from "../../icons/Close";
 import { Menu } from "../../icons/Menu";
+import { Github } from "../../icons/Github";
+import { Link } from "../Link/Link";
 
 type HeaderProps = {
   selectedMenuItemId?: number;
@@ -39,17 +40,23 @@ export const Header = ({
         </nav>
         <button className={s.menuButton} onClick={onToggleMobileMenu}>
           {isMobileMenuOpen ? (
-            <Close className={s.menu} />
+            <Close className={s.icon} />
           ) : (
-            <Menu className={s.menu} />
+            <Menu className={s.icon} />
           )}
           <VisuallyHidden>{`${
             isMobileMenuOpen ? "Close" : "Open"
           } menu`}</VisuallyHidden>
         </button>
-        <Link to="https://github.com/airadavometra/type-coersion-quiz">
-          GitHub
-        </Link>
+        {!isMobileMenuOpen && (
+          <Link
+            to="https://github.com/airadavometra/type-coersion-quiz"
+            className={s.githubLink}
+          >
+            <Github className={s.icon} />
+            GitHub
+          </Link>
+        )}
       </WidthContainer>
     </header>
   );

@@ -3,8 +3,8 @@
   margin-top: auto;
   padding-top: 16px;
   padding-bottom: 16px;
-  font-size: clamp(0.75rem, 0.3056rem + 0.9259vw, 1rem);
-  font-weight: var(--regular-font-weight);
+  font-size: clamp(0.75rem, 0.5714rem + 0.8929vw, 1rem);
+  font-weight: 400;
   color: var(--text-color);
 }
 .widthContainer {
@@ -24,30 +24,4 @@
 }
 .transparent {
   opacity: 0.6;
-}
-.link {
-  width: fit-content;
-  height: fit-content;
-  display: inline-block;
-  white-space: nowrap;
-  position: relative;
-  font-weight: var(--semi-bold-font-weight);
-  opacity: 1;
-}
-.link:before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  border-radius: 2px;
-  background-color: var(--text-color);
-  bottom: 0;
-  left: 0;
-  transform-origin: right;
-  transform: scaleX(0);
-  transition: transform 0.3s ease-in-out;
-}
-.link:hover::before {
-  transform-origin: left;
-  transform: scaleX(1);
 }

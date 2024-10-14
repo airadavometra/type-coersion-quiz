@@ -3,12 +3,39 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: min(4rem, 96px);
-  font-size: clamp(1rem, 0.5556rem + 0.9259vw, 1.25rem);
+  justify-content: center;
+  gap: min(6rem, 128px);
+  font-size: clamp(1rem, 0.8214rem + 0.8929vw, 1.25rem);
 }
 .section {
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: min(1.5rem, 32px);
+  gap: min(2.5rem, 48px);
+}
+.title {
+  font-size: clamp(2.25rem, 1rem + 6.25vw, 4rem);
+  font-weight: 600;
+  line-height: 1.25;
+}
+.button {
+  width: fit-content;
+  padding: min(1rem, 24px) min(2.5rem, 48px);
+  margin-left: auto;
+  font-size: clamp(1rem, 0.6429rem + 1.7857vw, 1.5rem);
+  font-weight: 500;
+  color: var(--white);
+  background-color: var(--black);
+  border-radius: 4px 80px 80px 80px;
+}
+
+.section2 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: min(1rem, 24px);
+}
+.title2 {
+  font-size: clamp(1.25rem, 0.7143rem + 2.6786vw, 2rem);
+  font-weight: 500;
 }

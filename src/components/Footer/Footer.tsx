@@ -1,4 +1,5 @@
 import { Heart } from "../../icons/Heart";
+import { Link } from "../Link/Link";
 import WidthContainer from "../WidthContainer/WidthContainer";
 import s from "./Footer.module.css";
 import classNames from "classnames";
@@ -11,13 +12,13 @@ export const Footer = () => {
           <span className={s.transparent}>Made with</span>
           <Heart className={classNames(s.heart, s.transparent)} />
           <span className={s.transparent}>by</span>
-          <a
-            href="https://www.airadavometra.space/"
+          <Link
+            to="https://www.airadavometra.space/"
             className={s.link}
             aria-label="Author's website"
           >
             Daria
-          </a>
+          </Link>
         </div>
         <span className={s.transparent}>2024</span>
       </WidthContainer>
