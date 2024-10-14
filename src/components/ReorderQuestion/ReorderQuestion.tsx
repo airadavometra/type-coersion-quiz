@@ -66,8 +66,7 @@ export const ReorderQuestion: FC<ReorderQuestionProps> = ({
   return (
     <section className={s.section}>
       <span className={s.task}>
-        Reorder the pieces to make an expression that returns the expected
-        result:
+        Reorder to make an expression that returns
         <Code>{question.expectedResult}</Code>
       </span>
       <DragDropContext onDragEnd={handleDragEnd}>
@@ -105,21 +104,29 @@ export const ReorderQuestion: FC<ReorderQuestionProps> = ({
           )}
         </Droppable>
       </DragDropContext>
-      <button
-        onClick={
-          isCommited
+      <div className={s.buttonContainer}>
+        {isCommited && !isAnswerCorrect && (
+          <span className={s.correctAnswer}>
+            Correct answer is <Code>{question.correctAnswer}</Code>
+          </span>
+        )}
+        <button
+          className={s.button}
+          onClick={
+            isCommited
+              ? isGameOver
+                ? handleStartNewGame
+                : handleGetNextQuestion
+              : handleCommitAnswer
+          }
+        >
+          {isCommited
             ? isGameOver
-              ? handleStartNewGame
-              : handleGetNextQuestion
-            : handleCommitAnswer
-        }
-      >
-        {isCommited
-          ? isGameOver
-            ? "Try again"
-            : "Next question"
-          : "Check my answer"}
-      </button>
+              ? "Try again"
+              : "Next question"
+            : "Check my answer"}
+        </button>
+      </div>
     </section>
   );
 };

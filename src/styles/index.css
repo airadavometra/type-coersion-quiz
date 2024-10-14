@@ -4,10 +4,9 @@
   --font: "Montserrat", Verdana, serif;
   --title-font: "Montserrat", Arial, serif;
 
-  --black: #000000;
+  --black: #242424;
   --white: #ffffff;
-  --black-transparent: #0000001a;
-  --white-transparent: hsla(0, 0%, 100%, 0.102);
+  --grey: #f6f6f9;
 
   --sky-blue: #3e7bff;
 
@@ -19,16 +18,13 @@
   --orange: #fdad6b;
   --green: #5fc179;
   --purple: #b98edc;
-  --grey: #b4b4b8;
   --pink: #de7cb2;
   --mint: #99edcc;
   --beige: #e3bc9a;
   --lime: #c8df52;
 
   --text-color: var(--black);
-  --text-color-transparent: var(--black-transparent);
   --background-color: var(--white);
-  --background-color-transparent: var(--white-transparent);
 }
 html,
 body,
@@ -62,41 +58,4 @@ a {
 
 .frozen {
   overflow: hidden;
-}
-
-.transparent {
-  background-color: var(--white) !important;
-}
-.blue {
-  background-color: var(--blue) !important;
-}
-.yellow {
-  background-color: var(--yellow) !important;
-}
-.red {
-  background-color: var(--red) !important;
-}
-.pink {
-  background-color: var(--pink) !important;
-}
-.green {
-  background-color: var(--green) !important;
-}
-.purple {
-  background-color: var(--purple) !important;
-}
-.grey {
-  background-color: var(--grey) !important;
-}
-.orange {
-  background-color: var(--orange) !important;
-}
-.mint {
-  background-color: var(--mint) !important;
-}
-.beige {
-  background-color: var(--beige) !important;
-}
-.lime {
-  background-color: var(--lime) !important;
 }

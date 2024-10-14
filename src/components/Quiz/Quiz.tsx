@@ -10,8 +10,9 @@ import {
   ReorderQuestion as ReorderQuestionType,
 } from "../../types/quizQuestion";
 import { getQuizComplexity } from "../../utils/getQuizComplexity";
-import { getRandomInteger } from "../../utils/getRandomInteger";
 import { getReorderQuestion } from "../../utils/getReorderQuestion";
+import { Heart } from "../../icons/Heart";
+import classNames from "classnames";
 
 export const Quiz = () => {
   const [score, setScore] = useState<number>(0);
@@ -32,7 +33,8 @@ export const Quiz = () => {
   };
 
   const handleGetNextQuestion = () => {
-    const isMultipleAnswersQuestion = Boolean(getRandomInteger(0, 1));
+    const isMultipleAnswersQuestion = Math.random() < 0.5;
+
     if (isMultipleAnswersQuestion) {
       setQuestion(getMultipleAnswersQuestion(complexity));
     } else {
@@ -47,10 +49,22 @@ export const Quiz = () => {
   };
 
   return (
-    <>
+    <div className={s.gameContainer}>
       <section className={s.gameData}>
         <span className={s.gameDataItem}>Score: {score}</span>
-        <span className={s.gameDataItem}>Lives: {lives}</span>
+        <span
+          className={s.gameDataItem}
+          aria-label={`${lives} lives remaining`}
+        >
+          {new Array(MAX_LIVES).fill(0).map((_, index) => (
+            <Heart
+              key={index}
+              className={classNames(s.heartIcon, {
+                [s.filled]: index + 1 <= lives,
+              })}
+            />
+          ))}
+        </span>
       </section>
       {question.type === "MultipleAnswersQuestion" ? (
         <MultipleAnswersQuestion
@@ -71,6 +85,6 @@ export const Quiz = () => {
           onCommitAnswer={handleCommitAnswer}
         />
       )}
-    </>
+    </div>
   );
 };

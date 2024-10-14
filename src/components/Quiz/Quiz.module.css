@@ -1,6 +1,24 @@
+.gameContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: min(4rem, 96px);
+}
 .gameData {
   display: flex;
   justify-content: space-between;
+  font-size: clamp(1rem, 0.6429rem + 1.7857vw, 1.5rem);
+  font-weight: 500;
 }
 .gameDataItem {
+  display: inline-flex;
+  align-items: center;
+  gap: min(0.75rem, 16px);
+}
+.heartIcon {
+  width: 1.75rem;
+}
+.filled {
+  fill: var(--black);
 }

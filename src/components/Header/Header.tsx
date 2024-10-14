@@ -53,7 +53,7 @@ export const Header = ({
             to="https://github.com/airadavometra/type-coersion-quiz"
             className={s.githubLink}
           >
-            <Github className={s.icon} />
+            <Github className={s.githubIcon} />
             GitHub
           </Link>
         )}

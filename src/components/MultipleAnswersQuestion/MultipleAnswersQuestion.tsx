@@ -66,6 +66,7 @@ export const MultipleAnswersQuestion: FC<MultipleAnswersQuestionProps> = ({
         ))}
       </fieldset>
       <button
+        className={s.button}
         onClick={
           isCommited
             ? isGameOver

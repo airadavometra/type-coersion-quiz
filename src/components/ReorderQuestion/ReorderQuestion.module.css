@@ -1,9 +1,13 @@
 .section {
-  width: 100%;
+  padding: min(3rem, 64px) min(2.5rem, 48px);
+  width: fit-content;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: min(2.5rem, 48px);
   align-items: center;
+  background-color: var(--grey);
+  border-radius: 28px;
 }
 .codeWrapper {
   display: flex;
@@ -11,7 +15,8 @@
 .task {
   display: flex;
   align-items: center;
-  gap: min(1rem, 20px);
+  font-size: clamp(1rem, 0.6429rem + 1.7857vw, 1.5rem);
+  font-weight: 500;
 }
 .itemsContainer {
   padding: 0;
@@ -20,5 +25,39 @@
   list-style-type: none;
 }
 .card {
-  margin: min(0.75rem, 16px);
+  padding: min(0.5rem, 12px) min(0.75rem, 16px);
+  margin: min(0.5rem, 12px);
+  background-color: var(--grey);
+  border: 2px solid var(--grey);
+  border-radius: 28px;
+}
+.card:hover {
+  border-color: var(--lavender);
+}
+.card.correct {
+  border-color: var(--green);
+}
+.card.wrong {
+  border-color: var(--red);
+}
+.buttonContainer {
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  gap: min(2.5rem, 48px);
+}
+.correctAnswer {
+  display: flex;
+  align-items: center;
+  font-size: clamp(0.75rem, 0.5714rem + 0.8929vw, 1rem);
+}
+.button {
+  width: fit-content;
+  padding: min(1rem, 24px) min(2.5rem, 48px);
+  margin-left: auto;
+  font-size: clamp(1rem, 0.6429rem + 1.7857vw, 1.5rem);
+  font-weight: 500;
+  color: var(--white);
+  background-color: var(--black);
+  border-radius: 48px 4px 48px 48px;
 }
