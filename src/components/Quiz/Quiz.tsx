@@ -33,7 +33,7 @@ export const Quiz = () => {
   };
 
   const handleGetNextQuestion = () => {
-    const isMultipleAnswersQuestion = Math.random() < 0.5;
+    const isMultipleAnswersQuestion = Math.random() < 0.7;
 
     if (isMultipleAnswersQuestion) {
       setQuestion(getMultipleAnswersQuestion(complexity));

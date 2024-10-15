@@ -30,8 +30,21 @@ export const ReorderQuestion: FC<ReorderQuestionProps> = ({
     string[]
   >(question.expressionItems);
 
-  const isAnswerCorrect =
-    orderedExpressionItems.join(" ") === question.correctAnswer;
+  let isAnswerCorrect = false;
+
+  try {
+    const answer = orderedExpressionItems.join(" ");
+    if (
+      answer === question.correctAnswer ||
+      eval(answer) === eval(question.correctAnswer)
+    ) {
+      isAnswerCorrect = true;
+    } else {
+      isAnswerCorrect = false;
+    }
+  } catch {
+    isAnswerCorrect = false;
+  }
 
   const handleGetNextQuestion = () => {
     setIsCommited(false);
