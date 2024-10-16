@@ -21,14 +21,31 @@
   list-style-type: none;
 }
 .linkContainer {
+  position: relative;
   display: inline-flex;
   flex-direction: column;
   align-items: center;
+  text-transform: uppercase;
 }
 .link {
-  padding: min(0.5rem, 12px) 0;
+  position: absolute;
   font-weight: 400;
-  text-transform: uppercase;
+}
+.link:hover {
+  font-weight: 600;
+}
+.link.selected {
+  font-weight: 800;
+}
+.hiddentBoldText {
+  font-weight: 800;
+  visibility: hidden;
+}
+.linkUnderline {
+  visibility: hidden;
+}
+.linkUnderline.selected {
+  visibility: visible;
 }
 .menuButton {
   padding: min(1rem, 24px);

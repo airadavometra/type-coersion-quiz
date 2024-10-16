@@ -7,6 +7,7 @@ import { Close } from "../../icons/Close";
 import { Menu } from "../../icons/Menu";
 import { Github } from "../../icons/Github";
 import { Link } from "../Link/Link";
+import { Link as RouterLink } from "react-router-dom";
 
 type HeaderProps = {
   selectedMenuItemId?: number;
@@ -26,14 +27,20 @@ export const Header = ({
           <ul className={s.navigation}>
             {NAVIGATION_ITEMS.map(({ id, title, path }) => (
               <li className={s.linkContainer} key={id}>
-                <Link
+                <RouterLink
                   to={path}
                   className={classNames(s.link, {
                     [s.selected]: id === selectedMenuItemId,
                   })}
                 >
                   {title}
-                </Link>
+                </RouterLink>
+                <span className={s.hiddentBoldText}>{title}</span>
+                {/* <Underline
+                  className={classNames(s.linkUnderline, {
+                    [s.selected]: id === selectedMenuItemId,
+                  })}
+                /> */}
               </li>
             ))}
           </ul>

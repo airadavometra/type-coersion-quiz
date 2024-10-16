@@ -12,7 +12,6 @@
 .task {
   display: flex;
   align-items: center;
-  gap: min(1rem, 20px);
   font-size: clamp(1rem, 0.6429rem + 1.7857vw, 1.5rem);
   font-weight: 500;
 }
@@ -52,7 +51,7 @@ input[type="radio"]:disabled + .customCheckboxLabel::before {
 }
 input[type="radio"]:focus + .customCheckboxLabel::before,
 input[type="radio"]:hover + .customCheckboxLabel::before {
-  background-color: var(--lavender);
+  background-color: var(--grey);
 }
 input[type="radio"]:checked + .customCheckboxLabel::before {
   background-color: var(--yellow);

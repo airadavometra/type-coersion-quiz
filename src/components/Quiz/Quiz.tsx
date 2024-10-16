@@ -11,7 +11,7 @@ import {
 } from "../../types/quizQuestion";
 import { getQuizComplexity } from "../../utils/getQuizComplexity";
 import { getReorderQuestion } from "../../utils/getReorderQuestion";
-import { Heart } from "../../icons/Heart";
+import { Heart } from "../../icons/doodles/Heart";
 import classNames from "classnames";
 
 export const Quiz = () => {

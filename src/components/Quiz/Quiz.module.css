@@ -18,6 +18,10 @@
 }
 .heartIcon {
   width: 1.75rem;
+  fill: var(--grey);
+}
+.heartIcon path {
+  stroke-width: 3px;
 }
 .filled {
   fill: var(--black);

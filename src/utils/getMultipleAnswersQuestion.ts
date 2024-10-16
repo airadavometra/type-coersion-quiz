@@ -1,7 +1,9 @@
 import { POSSIBLE_ANSWERS } from "../constants/possibleAnswers";
 import { OPERANDS } from "../constants/operands";
-import { LEFT_SIDE_UNARY_OPERATORS } from "../constants/operators";
-import { BINARY_OPERATORS } from "@babel/types";
+import {
+  BINARY_OPERATORS,
+  LEFT_SIDE_UNARY_OPERATORS,
+} from "../constants/operators";
 import { MultipleAnswersQuestion } from "../types/quizQuestion";
 import { getRandomInteger } from "./getRandomInteger";
 

@@ -32,7 +32,7 @@
   border-radius: 28px;
 }
 .card:hover {
-  border-color: var(--lavender);
+  border-color: var(--grey);
 }
 .card.correct {
   border-color: var(--green);
