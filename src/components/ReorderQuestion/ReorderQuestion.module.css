@@ -27,6 +27,8 @@
 .card {
   padding: min(0.5rem, 12px) min(0.75rem, 16px);
   margin: min(0.5rem, 12px);
+  display: flex;
+  align-items: center;
   background-color: var(--grey);
   border: 2px solid var(--yellow);
   border-radius: 28px;

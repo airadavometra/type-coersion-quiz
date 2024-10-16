@@ -11,7 +11,11 @@ export interface CodeProps {
 
 export const Code: FC<CodeProps> = ({ children }) => {
   return (
-    <SyntaxHighlighter language="javascript" style={stackoverflowLight}>
+    <SyntaxHighlighter
+      language="javascript"
+      style={stackoverflowLight}
+      customStyle={{ width: "fit-content", display: "inline" }}
+    >
       {children}
     </SyntaxHighlighter>
   );
