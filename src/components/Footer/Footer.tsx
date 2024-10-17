@@ -1,36 +1,27 @@
-import React, { FunctionComponent } from 'react';
-import GitHubLogo from '@icons/github.svg';
-import classes from './Footer.module.scss';
+import { Heart } from "../../icons/Heart";
+import { Link } from "../Link/Link";
+import WidthContainer from "../WidthContainer/WidthContainer";
+import s from "./Footer.module.css";
+import classNames from "classnames";
 
-export const Footer: FunctionComponent = () => {
+export const Footer = () => {
   return (
-    <footer className={classes.main}>
-      <div className={classes.linksContainer}>
-        <a
-          className={classes.link}
-          href="https://github.com/airadavometra/type-coersion-quiz"
-          target="_blank"
-          rel="noopener noreferrer"
-          onClick={() => gtag('event', 'click', { event_category: 'github link', event_label: 'github link' })}
-        >
-          <div>GitHub&nbsp;</div>
-        </a>
-        <GitHubLogo className={classes.githubLogo} />
-      </div>
-      <div className={classes.linksContainer}>
-        <span>Made by&nbsp;</span>
-        <a
-          className={classes.link}
-          href="https://airadavometra.space"
-          target="_blank"
-          rel="noopener noreferrer"
-          onClick={() =>
-            gtag('event', 'click', { event_category: 'airadavometra link', event_label: 'airadavometra link' })
-          }
-        >
-          <div>airadavometra</div>
-        </a>
-      </div>
+    <footer className={s.footer}>
+      <WidthContainer className={s.widthContainer}>
+        <div className={s.message}>
+          <span className={s.transparent}>Made with</span>
+          <Heart className={classNames(s.heart, s.transparent)} />
+          <span className={s.transparent}>by</span>
+          <Link
+            to="https://www.airadavometra.space/"
+            className={s.link}
+            aria-label="Author's website"
+          >
+            Daria
+          </Link>
+        </div>
+        <span className={s.transparent}>2024</span>
+      </WidthContainer>
     </footer>
   );
 };

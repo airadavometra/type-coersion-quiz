@@ -1,0 +1,83 @@
+.widthContainer {
+  display: flex;
+  flex-direction: column;
+  gap: min(6rem, 128px);
+}
+.title {
+  font-size: clamp(1.5rem, 0.7857rem + 3.5714vw, 2.5rem);
+  font-weight: 600;
+}
+.section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: min(1.5rem, 32px);
+}
+.sectionExplanation {
+  margin-bottom: min(1.5rem, 32px);
+}
+.background {
+  padding: min(3rem, 64px) min(2.5rem, 48px);
+  background-color: var(--grey);
+  border-radius: 28px;
+}
+.tableOverflow {
+  width: 100%;
+  overflow-x: auto;
+}
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  line-height: 2;
+  overflow-x: auto;
+}
+.table caption,
+.subtitle {
+  margin-bottom: min(2.5rem, 48px);
+  text-align: left;
+  font-size: clamp(1rem, 0.6429rem + 1.7857vw, 1.5rem);
+  font-weight: 600;
+}
+.table th {
+  font-weight: 600;
+  white-space: nowrap;
+}
+.table th,
+.table td {
+  padding: min(0.5rem, 12px) min(0.75rem, 16px);
+  text-align: left;
+  font-size: 1rem;
+}
+.table th,
+.table tbody tr:not(:last-of-type) {
+  border-bottom: 1px solid var(--black);
+}
+.table th:not(:last-of-type),
+.table td:not(:last-of-type) {
+  border-right: 1px solid var(--black);
+}
+.table code span {
+  white-space: wrap;
+}
+.list {
+  font-size: 1rem;
+  line-height: 2;
+}
+.examplesList {
+  display: grid;
+  gap: min(3rem, 64px) min(1.5rem, 32px);
+  grid-template-columns: repeat(2, 1fr);
+}
+
+@media (max-width: 48rem) {
+  .widthContainer {
+    gap: min(3rem, 64px);
+  }
+  .examplesList {
+    display: flex;
+    flex-direction: column;
+  }
+  .background {
+    padding: min(2.5rem, 48px) min(1.5rem, 32px);
+  }
+}

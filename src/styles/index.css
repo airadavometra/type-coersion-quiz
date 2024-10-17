@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap");
+
+:root {
+  --font: "Montserrat", Verdana, serif;
+  --title-font: "Montserrat", Arial, serif;
+
+  --black: #242424;
+  --white: #ffffff;
+  --grey: #f6f6f9;
+
+  --blue: #4a8fe7;
+  --blue2: #5c7aff;
+  --yellow: #ffdd53;
+  --red: #f18989;
+  --orange: #fdad6b;
+  --green: #5fc179;
+  --purple: #b98edc;
+  --pink: #de7cb2;
+  --mint: #99edcc;
+  --beige: #e3bc9a;
+  --lime: #c8df52;
+
+  --text-color: var(--black);
+  --background-color: var(--white);
+}
+html,
+body,
+#root {
+  max-width: 100vw;
+  height: 100%;
+}
+body {
+  font-family: var(--font);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color-scheme: light dark;
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
+button {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+}
+a {
+  color: inherit;
+  text-decoration: inherit;
+  font-size: inherit;
+}
+
+.frozen {
+  overflow: hidden;
+}

@@ -1,20 +1,41 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import { App } from '@components/App/App';
-import '@style/index.scss';
-import { store } from '@store/index';
-import { createHistory, LocationProvider } from '@reach/router';
-import { Analytics } from '@vercel/analytics/react';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import "./styles/index.css";
+import "./styles/reset.css";
+import { Layout } from "./components/Layout/Layout";
+import { QuizPage } from "./pages/Quiz/Quiz";
+import { CheatsheetPage } from "./pages/Cheatsheet/Cheatsheet";
 
-ReactDOM.render(
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: (
+      <Layout>
+        <QuizPage />
+      </Layout>
+    ),
+  },
+  {
+    path: "/cheatsheet",
+    element: (
+      <Layout>
+        <CheatsheetPage />
+      </Layout>
+    ),
+  },
+  {
+    path: "*",
+    element: (
+      <Layout>
+        <div>TODO: 404 page</div>
+      </Layout>
+    ),
+  },
+]);
+
+ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <Analytics />
-    <LocationProvider>
-      <Provider store={store}>
-        <App />
-      </Provider>
-    </LocationProvider>
-  </React.StrictMode>,
-  document.getElementById('root')
+    <RouterProvider router={router} />
+  </React.StrictMode>
 );

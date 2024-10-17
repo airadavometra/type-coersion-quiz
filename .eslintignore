@@ -1,6 +1,0 @@
-node_modules
-vite.config.ts
-postcss.config.js
-.eslintrc.js
-public
-*.js
