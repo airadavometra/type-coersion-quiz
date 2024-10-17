@@ -9,6 +9,7 @@ import {
   Draggable,
   OnDragEndResponder,
 } from "@hello-pangea/dnd";
+import useMediaQuery from "../../hooks/useMediaQuery";
 
 type ReorderQuestionProps = {
   question: ReorderQuestionType;
@@ -29,6 +30,8 @@ export const ReorderQuestion: FC<ReorderQuestionProps> = ({
   const [orderedExpressionItems, setOrderedExpressionItems] = useState<
     string[]
   >(question.expressionItems);
+
+  const isMobile = useMediaQuery("(max-width: 48rem)");
 
   let isAnswerCorrect = false;
 
@@ -79,11 +82,14 @@ export const ReorderQuestion: FC<ReorderQuestionProps> = ({
   return (
     <section className={s.section}>
       <span className={s.task}>
-        Reorder to make an expression that returns
+        Reorder to return
         <Code>{question.expectedResult}</Code>
       </span>
       <DragDropContext onDragEnd={handleDragEnd}>
-        <Droppable droppableId="expressionItems" direction="horizontal">
+        <Droppable
+          droppableId="expressionItems"
+          direction={isMobile ? "vertical" : "horizontal"}
+        >
           {(provided) => (
             <ul
               className={s.itemsContainer}

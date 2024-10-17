@@ -1,25 +1,30 @@
+import { useEffect, useState } from "react";
 import s from "./Header.module.css";
 import classNames from "classnames";
 import WidthContainer from "../WidthContainer/WidthContainer";
-import { VisuallyHidden } from "../VisuallyHidden/VisuallyHidden";
 import { NAVIGATION_ITEMS } from "../../constants/navigationItem";
-import { Close } from "../../icons/Close";
-import { Menu } from "../../icons/Menu";
 import { Github } from "../../icons/Github";
 import { Link } from "../Link/Link";
-import { Link as RouterLink } from "react-router-dom";
+import { Link as RouterLink, useLocation } from "react-router-dom";
 
-type HeaderProps = {
-  selectedMenuItemId?: number;
-  isMobileMenuOpen: boolean;
-  onToggleMobileMenu(): void;
-};
+export const Header = () => {
+  const location = useLocation();
 
-export const Header = ({
-  selectedMenuItemId,
-  isMobileMenuOpen,
-  onToggleMobileMenu,
-}: HeaderProps) => {
+  const [selectedMenuItemId, setSelectedMenuItemId] = useState<
+    number | undefined
+  >();
+
+  useEffect(() => {
+    const selectedMenuItem = NAVIGATION_ITEMS.find(
+      (nav) => nav.path === location.pathname
+    );
+    if (selectedMenuItem) {
+      setSelectedMenuItemId(selectedMenuItem.id);
+    } else {
+      setSelectedMenuItemId(undefined);
+    }
+  }, [location]);
+
   return (
     <header className={s.header}>
       <WidthContainer className={s.widthContainer}>
@@ -45,25 +50,13 @@ export const Header = ({
             ))}
           </ul>
         </nav>
-        <button className={s.menuButton} onClick={onToggleMobileMenu}>
-          {isMobileMenuOpen ? (
-            <Close className={s.icon} />
-          ) : (
-            <Menu className={s.icon} />
-          )}
-          <VisuallyHidden>{`${
-            isMobileMenuOpen ? "Close" : "Open"
-          } menu`}</VisuallyHidden>
-        </button>
-        {!isMobileMenuOpen && (
-          <Link
-            to="https://github.com/airadavometra/type-coersion-quiz"
-            className={s.githubLink}
-          >
-            <Github className={s.githubIcon} />
-            GitHub
-          </Link>
-        )}
+        <Link
+          to="https://github.com/airadavometra/type-coersion-quiz"
+          className={s.githubLink}
+        >
+          <Github className={s.githubIcon} />
+          GitHub
+        </Link>
       </WidthContainer>
     </header>
   );

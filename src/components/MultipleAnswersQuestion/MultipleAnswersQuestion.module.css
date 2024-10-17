@@ -78,8 +78,13 @@ input[type="radio"].wrong + .customCheckboxLabel::before {
 }
 
 @media (max-width: 48rem) {
+  .section {
+    width: 100%;
+    padding: min(2.5rem, 48px) min(1.5rem, 32px);
+    align-items: flex-start;
+  }
   .answersGrid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    flex-direction: column;
   }
 }

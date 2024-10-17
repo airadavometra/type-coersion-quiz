@@ -582,8 +582,7 @@ export const CheatsheetPage = () => {
               Logical AND <Code>x && y</Code>
             </li>
             <li>
-              Logical OR <Code>x || y</Code> and nullish coalescing{" "}
-              <Code>x ?? y</Code>
+              Logical OR <Code>x || y</Code>
             </li>
           </ol>
         </div>

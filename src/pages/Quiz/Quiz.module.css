@@ -39,3 +39,9 @@
   font-size: clamp(1.25rem, 0.7143rem + 2.6786vw, 2rem);
   font-weight: 500;
 }
+
+@media (max-width: 48rem) {
+  .widthContainer {
+    gap: min(3rem, 64px);
+  }
+}

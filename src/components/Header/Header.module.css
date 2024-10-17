@@ -47,15 +47,6 @@
 .linkUnderline.selected {
   visibility: visible;
 }
-.menuButton {
-  padding: min(1rem, 24px);
-  display: none;
-  font-size: 1rem;
-  font-weight: 600;
-}
-.icon {
-  width: 1.5rem;
-}
 .githubLink {
   padding: min(0.5rem, 12px) 0;
   align-items: center;
@@ -73,10 +64,7 @@
   .menuButton {
     padding-left: 0;
   }
-  .navigationContainer {
-    display: none;
-  }
-  .menuButton {
-    display: block;
+  .navigation {
+    gap: min(1.5rem, 32px);
   }
 }

@@ -70,8 +70,14 @@
 }
 
 @media (max-width: 48rem) {
+  .widthContainer {
+    gap: min(3rem, 64px);
+  }
   .examplesList {
     display: flex;
     flex-direction: column;
+  }
+  .background {
+    padding: min(2.5rem, 48px) min(1.5rem, 32px);
   }
 }
