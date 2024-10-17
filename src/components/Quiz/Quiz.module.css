@@ -25,6 +25,7 @@
 }
 .scoreDecor {
   width: 2.5em;
+  max-width: unset;
   position: absolute;
   top: -0.5em;
   left: -0.8em;
