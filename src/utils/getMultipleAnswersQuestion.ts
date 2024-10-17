@@ -1,5 +1,5 @@
 import { POSSIBLE_ANSWERS } from "../constants/possibleAnswers";
-import { OPERANDS } from "../constants/operands";
+import { GET_OPERAND_FUNCTIONS } from "../constants/operands";
 import {
   BINARY_OPERATORS,
   LEFT_SIDE_UNARY_OPERATORS,
@@ -34,8 +34,8 @@ const getMultipleAnswersQuestionInternal = (
   const operandsAmount = complexity;
   const selectedOperands: string[] = [];
   for (let i = 0; i < operandsAmount; i++) {
-    const operandIndex = getRandomInteger(0, OPERANDS.length);
-    let operand = OPERANDS[operandIndex];
+    const operandIndex = getRandomInteger(0, GET_OPERAND_FUNCTIONS.length);
+    let operand = GET_OPERAND_FUNCTIONS[operandIndex]();
     const needUnaryOperator = getRandomInteger(0, 2);
     if (needUnaryOperator) {
       const leftSide = getRandomInteger(0, 2);

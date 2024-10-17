@@ -13,10 +13,12 @@
   display: flex;
 }
 .task {
-  display: flex;
-  align-items: center;
+  display: inline;
   font-size: clamp(1rem, 0.6429rem + 1.7857vw, 1.5rem);
   font-weight: 500;
+}
+.task code span {
+  white-space: wrap;
 }
 .itemsContainer {
   padding: 0;

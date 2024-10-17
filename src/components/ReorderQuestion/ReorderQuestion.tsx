@@ -92,7 +92,7 @@ export const ReorderQuestion: FC<ReorderQuestionProps> = ({
             >
               {orderedExpressionItems.map((item, index) => (
                 <Draggable
-                  key={item}
+                  key={`${item}-${index}`}
                   draggableId={item}
                   index={index}
                   isDragDisabled={isCommited}

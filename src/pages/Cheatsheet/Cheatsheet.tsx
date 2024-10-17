@@ -536,20 +536,6 @@ export const CheatsheetPage = () => {
               </ul>
             </li>
             <li>
-              Bitwise shift:
-              <ul>
-                <li>
-                  Left shift <Code>{`x << y`}</Code>
-                </li>
-                <li>
-                  Right shift <Code>{`x >> y`}</Code>
-                </li>
-                <li>
-                  Unsigned right shift <Code>{`x >>> y`}</Code>
-                </li>
-              </ul>
-            </li>
-            <li>
               Relational operators:
               <ul>
                 <li>
