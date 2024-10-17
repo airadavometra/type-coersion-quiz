@@ -41,11 +41,17 @@ export const Header = () => {
                   {title}
                 </RouterLink>
                 <span className={s.hiddentBoldText}>{title}</span>
-                {/* <Underline
-                  className={classNames(s.linkUnderline, {
-                    [s.selected]: id === selectedMenuItemId,
-                  })}
-                /> */}
+                <img
+                  src={`/MenuUnderline_${title.replace(/\s/g, "")}.png`}
+                  aria-hidden
+                  className={classNames(
+                    s.linkUnderline,
+                    [s[title.replace(/\s/g, "").toLowerCase()]],
+                    {
+                      [s.selected]: id === selectedMenuItemId,
+                    }
+                  )}
+                />
               </li>
             ))}
           </ul>

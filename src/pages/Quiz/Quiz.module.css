@@ -14,6 +14,7 @@
   gap: min(2.5rem, 48px);
 }
 .title {
+  width: fit-content;
   font-size: clamp(2.25rem, 1rem + 6.25vw, 4rem);
   font-weight: 600;
   line-height: 1.25;
@@ -38,6 +39,33 @@
 .title2 {
   font-size: clamp(1.25rem, 0.7143rem + 2.6786vw, 2rem);
   font-weight: 500;
+}
+
+.titleDecoratedFragment {
+  position: relative;
+  white-space: nowrap;
+}
+.spikyDecor {
+  width: 1.5em;
+  position: absolute;
+  top: -1em;
+  left: -1.2em;
+  z-index: -1;
+}
+.wavyUnderline {
+  width: 120%;
+  max-width: unset;
+  position: absolute;
+  bottom: -0.6em;
+  left: -0.5em;
+  z-index: -1;
+}
+.squareDecor {
+  width: 1.5em;
+  position: absolute;
+  top: -0.5em;
+  left: -0.75em;
+  z-index: -1;
 }
 
 @media (max-width: 48rem) {

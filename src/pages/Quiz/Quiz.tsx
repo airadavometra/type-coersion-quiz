@@ -15,15 +15,41 @@ export const QuizPage = () => {
         <>
           <section className={s.section}>
             <h1 className={s.title}>
-              Think you&apos;ve mastered <br />
-              JavaScript type coercion?
+              <span className={s.titleDecoratedFragment}>
+                Think
+                <img
+                  src="/SpikyDecor1.png"
+                  aria-hidden
+                  className={s.spikyDecor}
+                />
+              </span>{" "}
+              you&apos;ve mastered <br />
+              JavaScript{" "}
+              <span className={s.titleDecoratedFragment}>
+                type coercion?
+                <img
+                  src="/WavyUnderline.png"
+                  aria-hidden
+                  className={s.wavyUnderline}
+                />
+              </span>
             </h1>
             <button onClick={() => setIsQuizStarted(true)} className={s.button}>
               Test your knowledge!
             </button>
           </section>
           <section className={s.section2}>
-            <h2 className={s.title2}>Need a quick recap?</h2>
+            <h2 className={s.title2}>
+              <span className={s.titleDecoratedFragment}>
+                Need
+                <img
+                  src="/SquareYellow.png"
+                  aria-hidden
+                  className={s.squareDecor}
+                />
+              </span>{" "}
+              a quick recap?
+            </h2>
             <p>
               Check out the <Link to="/cheatsheet">Cheat Sheet</Link> about JS
               type coercion rules.

@@ -670,8 +670,10 @@ export const CheatsheetPage = () => {
       <section className={s.section}>
         <div className={s.background}>
           <h2 className={s.subtitle}>JavaScript Equality Table</h2>
-          <p>// TODO add a redrawn table to match the style</p>
-          <img />
+          <img
+            src="/JavaScriptEqualityTable.png"
+            alt="JavaScript Equality Table"
+          />
         </div>
       </section>
       <section className={s.section}>

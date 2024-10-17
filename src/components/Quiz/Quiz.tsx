@@ -11,8 +11,6 @@ import {
 } from "../../types/quizQuestion";
 import { getQuizComplexity } from "../../utils/getQuizComplexity";
 import { getReorderQuestion } from "../../utils/getReorderQuestion";
-import { Heart } from "../../icons/doodles/Heart";
-import classNames from "classnames";
 
 export const Quiz = () => {
   const [score, setScore] = useState<number>(0);
@@ -56,15 +54,20 @@ export const Quiz = () => {
           aria-label={`${lives} lives remaining`}
         >
           {new Array(MAX_LIVES).fill(0).map((_, index) => (
-            <Heart
-              key={index}
-              className={classNames(s.heartIcon, {
-                [s.filled]: index + 1 <= lives,
-              })}
+            <img
+              src={index + 1 <= lives ? "/HeartRed.png" : "/HeartGrey.png"}
+              aria-hidden
+              className={s.heartIcon}
             />
           ))}
         </span>
-        <span className={s.gameDataItem}>Score: {score}</span>
+        <span className={s.gameDataItem}>
+          Score:{" "}
+          <span className={s.scoreDecoratedFragment}>
+            {score}
+            <img src="/Circle.png" aria-hidden className={s.scoreDecor} />
+          </span>
+        </span>
       </section>
       {question.type === "MultipleAnswersQuestion" ? (
         <MultipleAnswersQuestion
