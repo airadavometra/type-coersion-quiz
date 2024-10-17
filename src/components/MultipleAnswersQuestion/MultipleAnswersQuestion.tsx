@@ -39,32 +39,34 @@ export const MultipleAnswersQuestion: FC<MultipleAnswersQuestionProps> = ({
 
   return (
     <section className={s.section}>
-      <span className={s.task}>
-        What will be returned for
-        <Code>{`${question.expression} = ?`}</Code>
-      </span>
-      <fieldset className={s.answersGrid}>
-        {question.possibleAnswers.map((item) => (
-          <label key={`${question.expression} ${item}`}>
-            <input
-              className={classNames({
-                [s.correct]: isCommited && item === question.correctAnswer,
-                [s.wrong]:
-                  isCommited &&
-                  item === selectedAnswer &&
-                  selectedAnswer !== question.correctAnswer,
-              })}
-              disabled={isCommited}
-              type="radio"
-              checked={item === selectedAnswer}
-              onChange={() => setSelectedAnswer(item)}
-            />
-            <span className={classNames(s.customCheckboxLabel)}>
-              <Code>{item}</Code>
-            </span>
-          </label>
-        ))}
-      </fieldset>
+      <div className={s.background}>
+        <span className={s.task}>
+          What will be returned for
+          <Code>{`${question.expression} = ?`}</Code>
+        </span>
+        <fieldset className={s.answersGrid}>
+          {question.possibleAnswers.map((item) => (
+            <label key={`${question.expression} ${item}`}>
+              <input
+                className={classNames({
+                  [s.correct]: isCommited && item === question.correctAnswer,
+                  [s.wrong]:
+                    isCommited &&
+                    item === selectedAnswer &&
+                    selectedAnswer !== question.correctAnswer,
+                })}
+                disabled={isCommited}
+                type="radio"
+                checked={item === selectedAnswer}
+                onChange={() => setSelectedAnswer(item)}
+              />
+              <span className={classNames(s.customCheckboxLabel)}>
+                <Code>{item}</Code>
+              </span>
+            </label>
+          ))}
+        </fieldset>
+      </div>
       <button
         className={s.button}
         onClick={

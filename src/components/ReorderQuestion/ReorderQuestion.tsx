@@ -81,71 +81,71 @@ export const ReorderQuestion: FC<ReorderQuestionProps> = ({
 
   return (
     <section className={s.section}>
-      <span className={s.task}>
-        Reorder to return
-        <Code>{question.expectedResult}</Code>
-      </span>
-      <DragDropContext onDragEnd={handleDragEnd}>
-        <Droppable
-          droppableId="expressionItems"
-          direction={isMobile ? "vertical" : "horizontal"}
-        >
-          {(provided) => (
-            <ul
-              className={s.itemsContainer}
-              {...provided.droppableProps}
-              ref={provided.innerRef}
-            >
-              {orderedExpressionItems.map((item, index) => (
-                <Draggable
-                  key={`${item}-${index}`}
-                  draggableId={item}
-                  index={index}
-                  isDragDisabled={isCommited}
-                >
-                  {(provided) => (
-                    <li
-                      className={classNames(s.card, {
-                        [s.correct]: isCommited && isAnswerCorrect,
-                        [s.wrong]: isCommited && !isAnswerCorrect,
-                      })}
-                      {...provided.draggableProps}
-                      {...provided.dragHandleProps}
-                      ref={provided.innerRef}
-                    >
-                      <Code>{item}</Code>
-                    </li>
-                  )}
-                </Draggable>
-              ))}
-              {provided.placeholder}
-            </ul>
-          )}
-        </Droppable>
-      </DragDropContext>
-      <div className={s.buttonContainer}>
+      <div className={s.background}>
+        <span className={s.task}>
+          Reorder to return
+          <Code>{question.expectedResult}</Code>
+        </span>
+        <DragDropContext onDragEnd={handleDragEnd}>
+          <Droppable
+            droppableId="expressionItems"
+            direction={isMobile ? "vertical" : "horizontal"}
+          >
+            {(provided) => (
+              <ul
+                className={s.itemsContainer}
+                {...provided.droppableProps}
+                ref={provided.innerRef}
+              >
+                {orderedExpressionItems.map((item, index) => (
+                  <Draggable
+                    key={`${item}-${index}`}
+                    draggableId={item}
+                    index={index}
+                    isDragDisabled={isCommited}
+                  >
+                    {(provided) => (
+                      <li
+                        className={classNames(s.card, {
+                          [s.correct]: isCommited && isAnswerCorrect,
+                          [s.wrong]: isCommited && !isAnswerCorrect,
+                        })}
+                        {...provided.draggableProps}
+                        {...provided.dragHandleProps}
+                        ref={provided.innerRef}
+                      >
+                        <Code>{item}</Code>
+                      </li>
+                    )}
+                  </Draggable>
+                ))}
+                {provided.placeholder}
+              </ul>
+            )}
+          </Droppable>
+        </DragDropContext>
         {isCommited && !isAnswerCorrect && (
           <span className={s.correctAnswer}>
             Correct answer is <Code>{question.correctAnswer}</Code>
           </span>
         )}
-        <button
-          className={s.button}
-          onClick={
-            isCommited
-              ? isGameOver
-                ? handleStartNewGame
-                : handleGetNextQuestion
-              : handleCommitAnswer
-          }
-        >
-          {isCommited
-            ? isGameOver
-              ? "Try again"
-              : "Next question"
-            : "Check my answer"}
-        </button>
       </div>
+      <button
+        className={s.button}
+        onClick={
+          isCommited
+            ? isGameOver
+              ? handleStartNewGame
+              : handleGetNextQuestion
+            : handleCommitAnswer
+        }
+      >
+        {isCommited
+          ? isGameOver
+            ? "Try again"
+            : "Next question"
+          : "Check my answer"}
+      </button>
     </section>
   );
 };

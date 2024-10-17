@@ -51,7 +51,6 @@ export const Quiz = () => {
   return (
     <div className={s.gameContainer}>
       <section className={s.gameData}>
-        <span className={s.gameDataItem}>Score: {score}</span>
         <span
           className={s.gameDataItem}
           aria-label={`${lives} lives remaining`}
@@ -65,6 +64,7 @@ export const Quiz = () => {
             />
           ))}
         </span>
+        <span className={s.gameDataItem}>Score: {score}</span>
       </section>
       {question.type === "MultipleAnswersQuestion" ? (
         <MultipleAnswersQuestion
