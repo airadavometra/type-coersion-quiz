@@ -7,311 +7,350 @@ import s from "./Cheatsheet.module.css";
 export const CheatsheetPage = () => {
   return (
     <WidthContainer className={s.widthContainer}>
-      <h1 className={s.title}>JS Coercion Cheat Sheet</h1>
-      <div className={s.background}>
-        <div className={s.tableOverflow}>
-          <table className={s.table}>
-            <caption>What triggers type coercion</caption>
-            <thead>
-              <tr>
-                <th scope="col">Operators</th>
-                <th scope="col">Converts into</th>
-                <th scope="col">Exceptions</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>
-                  Logical context (e.g., <Code>{`if (val) { ... }`}</Code>)
-                </td>
-                <td>boolean</td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>
-                  Unary logical operator <Code>!</Code>
-                </td>
-                <td>boolean</td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>
-                  Binary logical operators <Code>||</Code>, <Code>&&</Code>
-                </td>
-                <td>boolean</td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>
-                  Unary operators <Code>+</Code>, <Code>-</Code>
-                </td>
-                <td>numeric</td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>
-                  Arithmetic operators <Code>-</Code>, <Code>+</Code>,{" "}
-                  <Code>*</Code>, <Code>/</Code>, <Code>%</Code>
-                </td>
-                <td>numeric</td>
-                <td>
-                  <Code>+</Code> converts to string, if one of operands is a
-                  string
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  Comparison operators <Code>&gt;</Code>, <Code>&lt;</Code>,{" "}
-                  <Code>&ge;</Code>, <Code>&le;</Code>
-                </td>
-                <td>numeric</td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>
-                  Bitwise operators <Code>|</Code>, <Code>&</Code>,{" "}
-                  <Code>^</Code>, <Code>~</Code>
-                </td>
-                <td>numeric</td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>
-                  Equality <Code>==</Code> and inequality <Code>!=</Code>{" "}
-                  operators
-                </td>
-                <td>numeric</td>
-                <td>
-                  Numeric coercion is not triggered if:
-                  <ul>
-                    <li>both operands are strings</li>
-                    <li>
-                      one of the operands is <Code>null</Code> or{" "}
-                      <Code>undefined</Code>
-                    </li>
-                  </ul>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+      <h1 className={s.title}>
+        JS Coercion Cheat Sheet
+        <img
+          src="/SpikyDecor2.png"
+          aria-hidden
+          className={classNames(s.spikyDecor, s.left)}
+        />
+        <img
+          src="/SpikyDecor2.png"
+          aria-hidden
+          className={classNames(s.spikyDecor, s.right)}
+        />
+      </h1>
+      <section>
+        <div className={s.background}>
+          <h2 className={s.subtitle}>
+            <span className={s.decoratedFragment}>
+              What triggers type coercion
+              <img
+                src="/SquareYellow.png"
+                aria-hidden
+                className={s.squareDecor}
+              />
+            </span>
+          </h2>
+          <div className={s.tableOverflow}>
+            <table className={s.table}>
+              <thead>
+                <tr>
+                  <th scope="col">Operators</th>
+                  <th scope="col">Converts into</th>
+                  <th scope="col">Exceptions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    Logical context (e.g., <Code>{`if (val) { ... }`}</Code>)
+                  </td>
+                  <td>boolean</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>
+                    Unary logical operator <Code>!</Code>
+                  </td>
+                  <td>boolean</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>
+                    Binary logical operators <Code>||</Code>, <Code>&&</Code>
+                  </td>
+                  <td>boolean</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>
+                    Unary operators <Code>+</Code>, <Code>-</Code>
+                  </td>
+                  <td>numeric</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>
+                    Arithmetic operators <Code>-</Code>, <Code>+</Code>,{" "}
+                    <Code>*</Code>, <Code>/</Code>, <Code>%</Code>
+                  </td>
+                  <td>numeric</td>
+                  <td>
+                    <Code>+</Code> converts to string, if one of operands is a
+                    string
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Comparison operators <Code>&gt;</Code>, <Code>&lt;</Code>,{" "}
+                    <Code>&ge;</Code>, <Code>&le;</Code>
+                  </td>
+                  <td>numeric</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>
+                    Bitwise operators <Code>|</Code>, <Code>&</Code>,{" "}
+                    <Code>^</Code>, <Code>~</Code>
+                  </td>
+                  <td>numeric</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>
+                    Equality <Code>==</Code> and inequality <Code>!=</Code>{" "}
+                    operators
+                  </td>
+                  <td>numeric</td>
+                  <td>
+                    Numeric coercion is not triggered if:
+                    <ul>
+                      <li>both operands are strings</li>
+                      <li>
+                        one of the operands is <Code>null</Code> or{" "}
+                        <Code>undefined</Code>
+                      </li>
+                    </ul>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
-      </div>
-      <div className={s.background}>
-        <div className={s.tableOverflow}>
-          <table className={s.table}>
-            <caption>Primitives coercion</caption>
-            <thead>
-              <tr>
-                <th scope="col">Primitive</th>
-                <th scope="col">To boolean</th>
-                <th scope="col">To number</th>
-                <th scope="col">To string</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>
-                  <Code>null</Code>
-                </td>
-                <td>
-                  <Code>false</Code>
-                </td>
-                <td>
-                  <Code>0</Code>
-                </td>
-                <td>
-                  <Code>"null"</Code>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <Code>undefined</Code>
-                </td>
-                <td>
-                  <Code>false</Code>
-                </td>
-                <td>
-                  <Code>NaN</Code>
-                </td>
-                <td>
-                  <Code>"undefined"</Code>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <Code>NaN</Code>
-                </td>
-                <td>
-                  <Code>false</Code>
-                </td>
-                <td>
-                  <Code>NaN</Code>
-                </td>
-                <td>
-                  <Code>"NaN"</Code>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <Code>true</Code>
-                </td>
-                <td>
-                  <Code>true</Code>
-                </td>
-                <td>
-                  <Code>1</Code>
-                </td>
-                <td>
-                  <Code>"true"</Code>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <Code>false</Code>
-                </td>
-                <td>
-                  <Code>false</Code>
-                </td>
-                <td>
-                  <Code>0</Code>
-                </td>
-                <td>
-                  <Code>"false"</Code>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <Code>0</Code>
-                </td>
-                <td>
-                  <Code>false</Code>
-                </td>
-                <td>
-                  <Code>0</Code>
-                </td>
-                <td>
-                  <Code>"0"</Code>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <Code>-0</Code>
-                </td>
-                <td>
-                  <Code>false</Code>
-                </td>
-                <td>
-                  <Code>-0</Code>
-                </td>
-                <td>
-                  <Code>"-0"</Code>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <Code>42</Code>
-                </td>
-                <td>
-                  <Code>true</Code>
-                </td>
-                <td>
-                  <Code>42</Code>
-                </td>
-                <td>
-                  <Code>"42"</Code>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <Code>-42.42</Code>
-                </td>
-                <td>
-                  <Code>true</Code>
-                </td>
-                <td>
-                  <Code>-42.42</Code>
-                </td>
-                <td>
-                  <Code>"-42.42"</Code>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <Code>""</Code>
-                </td>
-                <td>
-                  <Code>false</Code>
-                </td>
-                <td>
-                  <Code>0</Code>
-                </td>
-                <td>
-                  <Code>""</Code>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <Code>" 42 "</Code>
-                </td>
-                <td>
-                  <Code>true</Code>
-                </td>
-                <td>
-                  <Code>42</Code>
-                </td>
-                <td>
-                  <Code>" 42 "</Code>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <Code>" -42.42 "</Code>
-                </td>
-                <td>
-                  <Code>true</Code>
-                </td>
-                <td>
-                  <Code>-42.42</Code>
-                </td>
-                <td>
-                  <Code>" -42.42 "</Code>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <Code>"\n"</Code>
-                </td>
-                <td>
-                  <Code>true</Code>
-                </td>
-                <td>
-                  <Code>0</Code>
-                </td>
-                <td>
-                  <Code>"\n"</Code>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <Code>"42s"</Code>
-                </td>
-                <td>
-                  <Code>true</Code>
-                </td>
-                <td>
-                  <Code>NaN</Code>
-                </td>
-                <td>
-                  <Code>"42s"</Code>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+      </section>
+      <section>
+        <div className={s.background}>
+          <h2 className={s.subtitle}>
+            <span className={s.decoratedFragment}>
+              Primitives coercion
+              <img
+                src="/SquareOrange.png"
+                aria-hidden
+                className={s.squareDecor}
+              />
+            </span>
+          </h2>
+          <div className={s.tableOverflow}>
+            <table className={s.table}>
+              <thead>
+                <tr>
+                  <th scope="col">Primitive</th>
+                  <th scope="col">To boolean</th>
+                  <th scope="col">To number</th>
+                  <th scope="col">To string</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <Code>null</Code>
+                  </td>
+                  <td>
+                    <Code>false</Code>
+                  </td>
+                  <td>
+                    <Code>0</Code>
+                  </td>
+                  <td>
+                    <Code>"null"</Code>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <Code>undefined</Code>
+                  </td>
+                  <td>
+                    <Code>false</Code>
+                  </td>
+                  <td>
+                    <Code>NaN</Code>
+                  </td>
+                  <td>
+                    <Code>"undefined"</Code>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <Code>NaN</Code>
+                  </td>
+                  <td>
+                    <Code>false</Code>
+                  </td>
+                  <td>
+                    <Code>NaN</Code>
+                  </td>
+                  <td>
+                    <Code>"NaN"</Code>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <Code>true</Code>
+                  </td>
+                  <td>
+                    <Code>true</Code>
+                  </td>
+                  <td>
+                    <Code>1</Code>
+                  </td>
+                  <td>
+                    <Code>"true"</Code>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <Code>false</Code>
+                  </td>
+                  <td>
+                    <Code>false</Code>
+                  </td>
+                  <td>
+                    <Code>0</Code>
+                  </td>
+                  <td>
+                    <Code>"false"</Code>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <Code>0</Code>
+                  </td>
+                  <td>
+                    <Code>false</Code>
+                  </td>
+                  <td>
+                    <Code>0</Code>
+                  </td>
+                  <td>
+                    <Code>"0"</Code>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <Code>-0</Code>
+                  </td>
+                  <td>
+                    <Code>false</Code>
+                  </td>
+                  <td>
+                    <Code>-0</Code>
+                  </td>
+                  <td>
+                    <Code>"-0"</Code>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <Code>42</Code>
+                  </td>
+                  <td>
+                    <Code>true</Code>
+                  </td>
+                  <td>
+                    <Code>42</Code>
+                  </td>
+                  <td>
+                    <Code>"42"</Code>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <Code>-42.42</Code>
+                  </td>
+                  <td>
+                    <Code>true</Code>
+                  </td>
+                  <td>
+                    <Code>-42.42</Code>
+                  </td>
+                  <td>
+                    <Code>"-42.42"</Code>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <Code>""</Code>
+                  </td>
+                  <td>
+                    <Code>false</Code>
+                  </td>
+                  <td>
+                    <Code>0</Code>
+                  </td>
+                  <td>
+                    <Code>""</Code>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <Code>" 42 "</Code>
+                  </td>
+                  <td>
+                    <Code>true</Code>
+                  </td>
+                  <td>
+                    <Code>42</Code>
+                  </td>
+                  <td>
+                    <Code>" 42 "</Code>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <Code>" -42.42 "</Code>
+                  </td>
+                  <td>
+                    <Code>true</Code>
+                  </td>
+                  <td>
+                    <Code>-42.42</Code>
+                  </td>
+                  <td>
+                    <Code>" -42.42 "</Code>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <Code>"\n"</Code>
+                  </td>
+                  <td>
+                    <Code>true</Code>
+                  </td>
+                  <td>
+                    <Code>0</Code>
+                  </td>
+                  <td>
+                    <Code>"\n"</Code>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <Code>"42s"</Code>
+                  </td>
+                  <td>
+                    <Code>true</Code>
+                  </td>
+                  <td>
+                    <Code>NaN</Code>
+                  </td>
+                  <td>
+                    <Code>"42s"</Code>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
-      </div>
+      </section>
       <section className={s.section}>
         <div className={s.background}>
-          <h2 className={s.subtitle}>Object Conversion Algorithm</h2>
+          <h2 className={s.subtitle}>
+            <span className={s.decoratedFragment}>
+              Object Conversion Algorithm
+              <img src="/SquareRed.png" aria-hidden className={s.squareDecor} />
+            </span>
+          </h2>
           <ol className={s.list}>
             <li>If the value is already a primitive, return it.</li>
             <li>
@@ -359,9 +398,18 @@ export const CheatsheetPage = () => {
           </ol>
         </div>
         <div className={s.background}>
+          <h2 className={s.subtitle}>
+            <span className={s.decoratedFragment}>
+              Object conversion examples
+              <img
+                src="/SquarePink.png"
+                aria-hidden
+                className={s.squareDecor}
+              />
+            </span>
+          </h2>
           <div className={s.tableOverflow}>
             <table className={s.table}>
-              <caption>Object conversion examples</caption>
               <thead>
                 <tr>
                   <th scope="col">Object</th>
@@ -465,7 +513,16 @@ export const CheatsheetPage = () => {
       </section>
       <section className={s.section}>
         <div className={s.background}>
-          <h2 className={s.subtitle}>Operator Precedence</h2>
+          <h2 className={s.subtitle}>
+            <span className={s.decoratedFragment}>
+              Operator Precedence
+              <img
+                src="/SquarePurple.png"
+                aria-hidden
+                className={s.squareDecor}
+              />
+            </span>
+          </h2>
           <p className={s.sectionExplanation}>
             In order from highest to lowest precedence:
           </p>
@@ -587,7 +644,16 @@ export const CheatsheetPage = () => {
           </ol>
         </div>
         <div className={s.background}>
-          <h2 className={s.subtitle}>Operator Precedence Examples</h2>
+          <h2 className={s.subtitle}>
+            <span className={s.decoratedFragment}>
+              Operator Precedence Examples
+              <img
+                src="/SquareBlue.png"
+                aria-hidden
+                className={s.squareDecor}
+              />
+            </span>
+          </h2>
           <ul className={classNames(s.list, s.examplesList)}>
             <li>
               <Code>"5" + 1 + 2</Code> &rarr; <Code>"512"</Code>
@@ -669,7 +735,16 @@ export const CheatsheetPage = () => {
       </section>
       <section className={s.section}>
         <div className={s.background}>
-          <h2 className={s.subtitle}>JavaScript Equality Table</h2>
+          <h2 className={s.subtitle}>
+            <span className={s.decoratedFragment}>
+              JavaScript Equality Table
+              <img
+                src="/SquareGreen.png"
+                aria-hidden
+                className={s.squareDecor}
+              />
+            </span>
+          </h2>
           <img
             src="/JavaScriptEqualityTable.png"
             alt="JavaScript Equality Table"
