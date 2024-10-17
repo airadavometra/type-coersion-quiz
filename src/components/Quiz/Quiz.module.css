@@ -17,12 +17,16 @@
   gap: min(0.75rem, 16px);
 }
 .heartIcon {
-  width: 1.75rem;
-  fill: var(--grey);
+  width: 2rem;
 }
-.heartIcon path {
-  stroke-width: 3px;
+.scoreDecoratedFragment {
+  position: relative;
+  white-space: nowrap;
 }
-.filled {
-  fill: var(--black);
+.scoreDecor {
+  width: 2.5em;
+  position: absolute;
+  top: -0.5em;
+  left: -0.8em;
+  z-index: -1;
 }

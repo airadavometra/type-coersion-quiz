@@ -7,18 +7,11 @@
   --black: #242424;
   --white: #ffffff;
   --grey: #f6f6f9;
+  --darkGrey: #adadb0;
 
-  --blue: #4a8fe7;
-  --blue2: #5c7aff;
-  --yellow: #ffdd53;
-  --red: #f18989;
-  --orange: #fdad6b;
-  --green: #5fc179;
-  --purple: #b98edc;
-  --pink: #de7cb2;
-  --mint: #99edcc;
-  --beige: #e3bc9a;
-  --lime: #c8df52;
+  --yellow: #ffe600;
+  --red: #ed435c;
+  --green: #16b242;
 
   --text-color: var(--black);
   --background-color: var(--white);

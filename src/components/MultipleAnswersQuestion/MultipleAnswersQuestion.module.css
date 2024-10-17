@@ -42,7 +42,7 @@
   display: inline-block;
   flex-shrink: 0;
   flex-grow: 0;
-  border: 1px solid var(--black);
+  border: 1px solid var(--darkGrey);
   border-radius: 100%;
   background-color: var(--white);
   background-repeat: no-repeat;

@@ -43,6 +43,19 @@
 }
 .linkUnderline {
   visibility: hidden;
+  max-width: unset;
+  position: absolute;
+  z-index: -1;
+}
+.linkUnderline.quiz {
+  width: 170%;
+  bottom: -0.8em;
+  left: -0.7em;
+}
+.linkUnderline.cheatsheet {
+  width: 110%;
+  bottom: -0.8em;
+  left: -0.2em;
 }
 .linkUnderline.selected {
   visibility: visible;

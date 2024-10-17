@@ -4,8 +4,25 @@
   gap: min(6rem, 128px);
 }
 .title {
+  width: fit-content;
+  position: relative;
   font-size: clamp(1.5rem, 0.7857rem + 3.5714vw, 2.5rem);
   font-weight: 600;
+}
+.spikyDecor {
+  width: 1.5em;
+  position: absolute;
+  z-index: -1;
+}
+.left {
+  transform: rotate(-90deg);
+  bottom: -0.75em;
+  left: -1.2em;
+}
+.right {
+  transform: rotate(90deg);
+  top: -0.6em;
+  right: -1.2em;
 }
 .section {
   width: 100%;
@@ -69,6 +86,18 @@
   grid-template-columns: repeat(2, 1fr);
 }
 
+.decoratedFragment {
+  position: relative;
+  white-space: nowrap;
+  z-index: 2;
+}
+.squareDecor {
+  width: 1.5em;
+  position: absolute;
+  top: -0.5em;
+  left: -0.75em;
+  z-index: -1;
+}
 @media (max-width: 48rem) {
   .widthContainer {
     gap: min(3rem, 64px);
