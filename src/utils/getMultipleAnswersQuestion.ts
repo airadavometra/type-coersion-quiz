@@ -1,4 +1,3 @@
-import { POSSIBLE_ANSWERS } from "../constants/possibleAnswers";
 import { GET_OPERAND_FUNCTIONS } from "../constants/operands";
 import {
   BINARY_OPERATORS,
@@ -21,7 +20,9 @@ const generatePossibleAnswers = (correctAnswer: string) => {
   const answers = new Set<string>();
   answers.add(correctAnswer);
   while (answers.size != 6) {
-    answers.add(POSSIBLE_ANSWERS[getRandomInteger(0, POSSIBLE_ANSWERS.length)]);
+    answers.add(
+      GET_OPERAND_FUNCTIONS[getRandomInteger(0, GET_OPERAND_FUNCTIONS.length)]()
+    );
   }
 
   return shuffle([...answers]);
