@@ -39,10 +39,10 @@
   align-items: center;
   background-color: var(--grey);
   border: 2px solid var(--yellow);
-  border-radius: 28px;
+  border-radius: 14px;
 }
 .card:hover {
-  border-color: var(--grey);
+  border-color: var(--darkGrey);
 }
 .card.correct {
   border-color: var(--green);
