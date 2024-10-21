@@ -3,6 +3,8 @@ import s from "./MultipleAnswersQuestion.module.css";
 import classNames from "classnames";
 import { MultipleAnswersQuestion as MultipleAnswersQuestionType } from "../../types/quizQuestion";
 import { Code } from "../Code/Code";
+import { motion } from "framer-motion";
+import { scaleUp } from "../../motions/scaleUp";
 
 type MultipleAnswersQuestionProps = {
   question: MultipleAnswersQuestionType;
@@ -67,8 +69,10 @@ export const MultipleAnswersQuestion: FC<MultipleAnswersQuestionProps> = ({
           ))}
         </fieldset>
       </div>
-      <button
+      <motion.button
         className={s.button}
+        variants={scaleUp}
+        whileHover={scaleUp.hover}
         onClick={
           isCommited
             ? isGameOver
@@ -82,7 +86,7 @@ export const MultipleAnswersQuestion: FC<MultipleAnswersQuestionProps> = ({
             ? "Try again"
             : "Next question"
           : "Check my answer"}
-      </button>
+      </motion.button>
     </section>
   );
 };

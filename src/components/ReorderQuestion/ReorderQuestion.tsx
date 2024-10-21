@@ -10,6 +10,8 @@ import {
   OnDragEndResponder,
 } from "@hello-pangea/dnd";
 import useMediaQuery from "../../hooks/useMediaQuery";
+import { motion } from "framer-motion";
+import { scaleUp } from "../../motions/scaleUp";
 
 type ReorderQuestionProps = {
   question: ReorderQuestionType;
@@ -130,8 +132,10 @@ export const ReorderQuestion: FC<ReorderQuestionProps> = ({
           </span>
         )}
       </div>
-      <button
+      <motion.button
         className={s.button}
+        variants={scaleUp}
+        whileHover={scaleUp.hover}
         onClick={
           isCommited
             ? isGameOver
@@ -145,7 +149,7 @@ export const ReorderQuestion: FC<ReorderQuestionProps> = ({
             ? "Try again"
             : "Next question"
           : "Check my answer"}
-      </button>
+      </motion.button>
     </section>
   );
 };

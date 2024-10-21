@@ -3,6 +3,8 @@ import WidthContainer from "../../components/WidthContainer/WidthContainer";
 import s from "./Quiz.module.css";
 import { Quiz } from "../../components/Quiz/Quiz";
 import { Link } from "../../components/Link/Link";
+import { motion } from "framer-motion";
+import { scaleUp } from "../../motions/scaleUp";
 
 export const QuizPage = () => {
   const [isQuizStarted, setIsQuizStarted] = useState<boolean>(false);
@@ -34,9 +36,14 @@ export const QuizPage = () => {
                 />
               </span>
             </h1>
-            <button onClick={() => setIsQuizStarted(true)} className={s.button}>
+            <motion.button
+              onClick={() => setIsQuizStarted(true)}
+              className={s.button}
+              variants={scaleUp}
+              whileHover={scaleUp.hover}
+            >
               Test your knowledge!
-            </button>
+            </motion.button>
           </section>
           <section className={s.section2}>
             <h2 className={s.title2}>

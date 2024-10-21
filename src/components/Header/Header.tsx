@@ -6,6 +6,8 @@ import { NAVIGATION_ITEMS } from "../../constants/navigationItem";
 import { Github } from "../../icons/Github";
 import { Link } from "../Link/Link";
 import { Link as RouterLink, useLocation } from "react-router-dom";
+import { motion } from "framer-motion";
+import { scaleUp } from "../../motions/scaleUp";
 
 export const Header = () => {
   const location = useLocation();
@@ -31,7 +33,12 @@ export const Header = () => {
         <nav className={s.navigationContainer}>
           <ul className={s.navigation}>
             {NAVIGATION_ITEMS.map(({ id, title, path }) => (
-              <li className={s.linkContainer} key={id}>
+              <motion.li
+                className={s.linkContainer}
+                key={id}
+                variants={scaleUp}
+                whileHover={scaleUp.hover}
+              >
                 <RouterLink
                   to={path}
                   className={classNames(s.link, {
@@ -52,7 +59,7 @@ export const Header = () => {
                     }
                   )}
                 />
-              </li>
+              </motion.li>
             ))}
           </ul>
         </nav>
