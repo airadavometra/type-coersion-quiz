@@ -9,7 +9,6 @@ import {
   MultipleAnswersQuestion as MultipleAnswersQuestionType,
   ReorderQuestion as ReorderQuestionType,
 } from "../../types/quizQuestion";
-import { getQuizComplexity } from "../../utils/getQuizComplexity";
 import { getReorderQuestion } from "../../utils/getReorderQuestion";
 
 export const Quiz = () => {
@@ -20,7 +19,7 @@ export const Quiz = () => {
     getMultipleAnswersQuestion(2)
   );
 
-  const complexity = useMemo(() => getQuizComplexity(score), [score]);
+  const complexity = useMemo(() => Math.floor(score / 10) + 2, [score]);
 
   const handleCommitAnswer = (isAnswerCorrect: boolean) => {
     if (isAnswerCorrect) {
@@ -31,7 +30,7 @@ export const Quiz = () => {
   };
 
   const handleGetNextQuestion = () => {
-    const isMultipleAnswersQuestion = Math.random() < 0.7;
+    const isMultipleAnswersQuestion = Math.random() < 0.5;
 
     if (isMultipleAnswersQuestion) {
       setQuestion(getMultipleAnswersQuestion(complexity));
