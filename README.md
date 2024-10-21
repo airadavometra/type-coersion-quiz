@@ -22,13 +22,9 @@ No special installation instructions required.
 
 Simply visit the website and start practicing your type coercion skills through the quiz, or refer to the cheat sheet as needed.
 
-## Screenshots/Demos
-
-_Add any screenshots or demos here if needed._
-
 ## Contribution Guidelines
 
-This project is for personal use, and I’m not accepting contributions.
+Please create issues for bugs or improvements.
 
 ## License
 
