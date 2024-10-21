@@ -1,50 +1,35 @@
-# React + TypeScript + Vite
+# JavaScript Type Coercion Quiz & Cheat Sheet
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An interactive platform to sharpen your JavaScript type coercion skills! Tackle an endless quiz with randomly generated questions, and use the handy cheat sheet for quick, on-the-spot learning.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Infinite Quiz:** Practice your JavaScript type coercion knowledge with randomly generated questions.
+- **Question Types:**
+  - **Multiple Choice:** Choose the correct result of a JavaScript expression.
+  - **Drag-and-Drop:** Reorder operands and operators to form a valid expression.
+- **Cheat Sheet:** Quickly refer to key JavaScript type coercion rules and examples.
 
-## Expanding the ESLint configuration
+## Technologies Used
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **Frontend:** React, TypeScript, Vite
 
-- Configure the top-level `parserOptions` property like this:
+## Installation
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+No special installation instructions required.
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Usage
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+Simply visit the website and start practicing your type coercion skills through the quiz, or refer to the cheat sheet as needed.
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## Screenshots/Demos
+
+_Add any screenshots or demos here if needed._
+
+## Contribution Guidelines
+
+This project is for personal use, and I’m not accepting contributions.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for more details.
