@@ -6,6 +6,7 @@ import "./styles/reset.css";
 import { Layout } from "./components/Layout/Layout";
 import { QuizPage } from "./pages/Quiz/Quiz";
 import { CheatsheetPage } from "./pages/Cheatsheet/Cheatsheet";
+import { Analytics } from "@vercel/analytics/react";
 
 const router = createBrowserRouter([
   {
@@ -37,5 +38,6 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <RouterProvider router={router} />
+    <Analytics />
   </React.StrictMode>
 );
